@@ -1,7 +1,8 @@
 import importlib
 import collections
 
-from Marin import dispatcher, telethn
+from Marin import dispatcher
+from Marin import client as telethn
 from Marin.__help__ import (
     CHAT_SETTINGS,
     DATA_EXPORT,
