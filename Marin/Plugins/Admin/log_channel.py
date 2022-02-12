@@ -11,7 +11,7 @@ if is_module_loaded(FILENAME):
     from telegram.utils.helpers import escape_markdown
 
     from Marin import LOGGER, dispatcher
-    from Marin.Hamdlers.validation import user_admin
+    from Marin.Handlers.validation import user_admin
     from Marin.Database import log_channel_sql as sql
 
     def loggable(func):
