@@ -15,7 +15,7 @@ from telegram.error import (
     BadRequest,
     Unauthorized,
 )
-
+from Marin import client as telethn
 from Marin import (
     OWNER_ID,
     dispatcher,
@@ -27,7 +27,6 @@ from Marin import (
     PORT,
     URL,
     TOKEN,
-    telethn,
     updater,
 )
 
