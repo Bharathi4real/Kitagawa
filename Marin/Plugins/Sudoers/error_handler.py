@@ -96,7 +96,7 @@ def error_callback(update: Update, context: CallbackContext):
             context.bot.send_document(
                 MESSAGE_DUMP,
                 open("error.txt", "rb"),
-                caption=f"#{context.error.identifier}\n<b>Your enemy's make an error for you, demon king:"
+                caption=f"#{context.error.identifier}\n<b>Beep Bop Beep Bop Found an Error:"
                 f"</b>\n<code>{e}</code>",
                 parse_mode="html",
             )
@@ -108,7 +108,7 @@ def error_callback(update: Update, context: CallbackContext):
             text=f"#{context.error.identifier}\n<b>Your enemy's make an error for you, demon king:"
             f"</b>\n<code>{e}</code>",
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Cursed Errors", url=url)]],
+                [[InlineKeyboardButton("Error log", url=url)]],
             ),
             parse_mode="html",
         )
