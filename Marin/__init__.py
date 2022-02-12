@@ -217,7 +217,7 @@ SUPPORT_USERS = list(SUPPORT_USERS)
 
 # Load at end to ensure all prev variables have been set
 # pylint: disable=C0413
-from Marin.modules.helper_funcs.handlers import CustomCommandHandler
+from Marin.Handlers.managers import CustomCommandHandler
 
 if CUSTOM_CMD and len(CUSTOM_CMD) >= 1:
     tg.CommandHandler = CustomCommandHandler
