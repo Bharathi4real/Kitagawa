@@ -8,7 +8,7 @@ from telegram.utils.helpers import mention_html
 
 from Marin import dispatcher, LOGGER
 from Marin.Plugins.Admin.disable import DisableAbleCommandHandler
-from Marin.Hamdlers.alternate import typing_action
+from Marin.Handlers.alternate import typing_action
 from Marin.Handlers.validation import (
     bot_admin,
     user_admin,
