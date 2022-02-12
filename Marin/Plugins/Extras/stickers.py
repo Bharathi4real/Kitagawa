@@ -12,7 +12,7 @@ from telegram.utils.helpers import mention_html
 
 from Marin import dispatcher
 from Marin.Plugins.Admin.disable import DisableAbleCommandHandler
-from zeldris.modules.helper_funcs.alternate import typing_action
+from Marin.Handlers.alternate import typing_action
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
 
