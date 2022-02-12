@@ -63,7 +63,7 @@ def eliminate_channel(update: Update, context: CallbackContext):
         and message.sender_chat.type == "channel"
         and not message.is_automatic_forward
     ):
-        bot.delete_message(chat_id=chat.id, message_id=update.effective_message)
+        message.delete()
         sender_chat = message.sender_chat
         bot.ban_chat_sender_chat(sender_chat_id=sender_chat.id, chat_id=chat.id)
 
