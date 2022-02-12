@@ -17,7 +17,7 @@ from Marin.Database.Redis.afk_redis import (
     is_user_afk,
     afk_reason,
 )
-from Marin. import get_user_id
+from Marin.users import get_user_id
 
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
