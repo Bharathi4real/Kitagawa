@@ -20,6 +20,7 @@ psutil==5.9.0
 psycopg2-binary
 pyrate-limiter
 python-telegram-bot==13.11.0
+pyrogram
 pytz
 redis==4.1.0
 requests
