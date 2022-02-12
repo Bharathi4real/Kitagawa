@@ -2,7 +2,7 @@ from functools import wraps
 from threading import RLock
 
 from cachetools import TTLCache
-from telegram import Chat, ChatMember, Update
+from telegram import Chat, ChatMember, Update, User
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CallbackContext
 
@@ -16,6 +16,27 @@ from Marin import (
 # refresh cache 10m
 ADMIN_CACHE = TTLCache(maxsize=512, ttl=60 * 10)
 THREAD_LOCK = RLock()
+
+
+
+def user_can_promote(chat: Chat, user: User, bot_id: int) -> bool:
+    return chat.get_member(user.id).can_promote_members
+
+
+def user_can_ban(chat: Chat, user: User, bot_id: int) -> bool:
+    return chat.get_member(user.id).can_restrict_members
+
+
+def user_can_pin(chat: Chat, user: User, bot_id: int) -> bool:
+    return chat.get_member(user.id).can_pin_messages
+
+
+def user_can_changeinfo(chat: Chat, user: User, bot_id: int) -> bool:
+    return chat.get_member(user.id).can_change_info
+
+
+def user_can_delete(chat: Chat, user: User, bot_id: int) -> bool:
+    return chat.get_member(user.id).can_delete_messages
 
 
 def can_delete(chat: Chat, bot_id: int) -> bool:
