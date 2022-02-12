@@ -85,7 +85,7 @@ def gtts(update: Update, context: CallbackContext):
             reply = reply.replace(x, "")
     try:
         tts = gTTS(reply)
-        tts.save(Marin TTS.mp3")
+        tts.save("Marin TTS.mp3")
         with open("Marin TTS.mp3", "rb") as speech:
             msg.reply_audio(speech)
     finally:
