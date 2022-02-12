@@ -4,7 +4,7 @@ from telegram import Message, MessageEntity
 from telegram.error import BadRequest
 
 from Marin import LOGGER
-from zeldris.modules.users import get_user_id
+from Marin.users import get_user_id
 
 
 def id_from_reply(message):
