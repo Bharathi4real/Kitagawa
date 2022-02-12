@@ -298,15 +298,12 @@ def yone_bhelp_callback(update: Update, context: CallbackContext):
                         InlineKeyboardButton(text="Users", callback_data="user_back"),
                     ],
                     [
-                        InlineKeyboardButton(text="Tools", callback_data="tools_back"),
-                        InlineKeyboardButton(
-                            text="Extras", callback_data="extras_back"
-                        ),
-                    ],
-                    [
+                        InlineKeyboardButton(text="Extras", callback_data="extras_back"),
                         InlineKeyboardButton(
                             text="Sudoers", callback_data="sudoers_back"
                         ),
+                    ],
+                    [
                         InlineKeyboardButton(
                             text="Advanced Commands", callback_data="help_back"
                         ),
