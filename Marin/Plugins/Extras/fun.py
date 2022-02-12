@@ -10,7 +10,7 @@ from telegram.utils.helpers import escape_markdown
 
 import Marin.Plugins.fun_strings as fun
 from Marin import LOGGER, DEV_USERS, SUPPORT_USERS, dispatcher
-from Marin.Plugins.Admimln.disable import (
+from Marin.Plugins.Admin.disable import (
     DisableAbleCommandHandler,
     DisableAbleMessageHandler,
 )
