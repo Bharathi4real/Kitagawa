@@ -105,7 +105,7 @@ def error_callback(update: Update, context: CallbackContext):
         url = f"https://spaceb.in/{response['payload']['id']}"
         context.bot.send_message(
             MESSAGE_DUMP,
-            text=f"#{context.error.identifier}\n<b>Your enemy's make an error for you, demon king:"
+            text=f"#{context.error.identifier}\n<b>Beep Bop Beep Bop Found an Error:"
             f"</b>\n<code>{e}</code>",
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("Error log", url=url)]],
