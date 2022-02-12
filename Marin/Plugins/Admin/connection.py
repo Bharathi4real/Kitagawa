@@ -8,10 +8,10 @@ from telegram.ext import CommandHandler, CallbackQueryHandler, CallbackContext
 
 import Marin.Database.connection_sql as sql
 from Marin import dispatcher, DEV_USERS
-from Marin.Handlers import validation
+from Marin.Handlers.validation import user_admin
 from Marin.Handlers.alternate import send_message, typing_action
 
-user_admin = chat_status.user_admin
+
 
 
 @user_admin
