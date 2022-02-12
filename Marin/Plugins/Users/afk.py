@@ -6,7 +6,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, Filters, MessageHandler
 
 from Marin import dispatcher, REDIS
-from Marin.disable import (
+from Marin.Plugins.Admin.disable import (
     DisableAbleCommandHandler,
     DisableAbleMessageHandler,
 )
@@ -17,7 +17,7 @@ from Marin.Database.Redis.afk_redis import (
     is_user_afk,
     afk_reason,
 )
-from zeldris.modules.users import get_user_id
+from Marin. import get_user_id
 
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
