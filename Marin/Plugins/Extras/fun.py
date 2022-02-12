@@ -8,7 +8,7 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters, CallbackContext
 from telegram.utils.helpers import escape_markdown
 
-import Marin.plugins.fun_strings as fun
+import Marin.Plugins.fun_strings as fun
 from Marin import LOGGER, DEV_USERS, SUPPORT_USERS, dispatcher
 from Marin.Plugins.Admimln.disable import (
     DisableAbleCommandHandler,
