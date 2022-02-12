@@ -20,7 +20,7 @@ from Marin.Handlers.validation import (
     user_can_ban,
 )
 from Marin.Handlers.extraction import extract_user_and_text
-from Marin.handlers.string_handling import extract_time
+from Marin.Handlers.string_handling import extract_time
 from Marin.Plugins.Admin.log_channel import loggable
 
 
