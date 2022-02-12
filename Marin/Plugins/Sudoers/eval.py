@@ -11,7 +11,7 @@ from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler
 
 from Marin import LOGGER, dispatcher
-from Marin.Hamdlers.validation import dev_plus
+from Marin.Handlers.validation import dev_plus
 
 namespaces = {}
 
