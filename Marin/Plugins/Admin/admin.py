@@ -8,7 +8,7 @@ from telegram.utils.helpers import mention_html
 
 from Marin import dispatcher
 from Marin.Plugins.Admin.connection import connected
-from Marin.disable import DisableAbleCommandHandler
+from Marin.Plugins.Admin.disable import DisableAbleCommandHandler
 from Marin.Handlers.validation import (
     user_can_pin,
     user_can_promote,
