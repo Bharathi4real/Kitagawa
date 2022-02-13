@@ -1,10 +1,10 @@
 import os
 
 from loguru import logger
-from pyrogram import Client, filters
+from pyrogram import filters
 from pyrogram.errors import BadRequest
 from pyrogram.types import Message
-
+from Marin import client
 
 @Client.on_message(
     filters.command(['report', f'report@MarinAnimeBot'], ['/', '!']) |
