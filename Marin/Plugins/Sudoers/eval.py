@@ -1,6 +1,7 @@
 import ast
 import io
 import os
+import subprocess
 
 # Common imports for eval
 import textwrap
