@@ -6,7 +6,7 @@ from pyrogram.errors import BadRequest
 from pyrogram.types import Message
 from Marin import client
 
-@Client.on_message(
+@client.on_message(
     filters.command(['report', f'report@MarinAnimeBot'], ['/', '!']) |
     filters.command(['admin', 'admins'], '@') & ~filters.private,
     group=303
