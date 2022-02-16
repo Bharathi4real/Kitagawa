@@ -1,13 +1,13 @@
 from telegram import Message
 from telegram.ext import MessageFilter
 
-from Marin import DEV_USERS, SUPPORT_USERS
+from Marin import DEV_USERS, DRAGONS
 
 
 class CustomFilters(object):
     class _Supporters(MessageFilter):
         def filter(self, message: Message):
-            return bool(message.from_user and message.from_user.id in SUPPORT_USERS)
+            return bool(message.from_user and message.from_user.id in DRAGONS)
 
     support_filter = _Supporters()
 
