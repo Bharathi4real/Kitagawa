@@ -46,27 +46,30 @@ if ENV:
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
 
     try:
+        DRAGONS = {int(x) for x in os.environ.get("DRAGONS", "").split()}
         DEV_USERS = {int(x) for x in os.environ.get("DEV_USERS", "").split()}
     except ValueError:
-        raise Exception(
-            "[Marin] Your dev users list does not contain valid integers."
+        raise Exception("Your sudo or dev users list does not contain valid integers."
         )
 
     try:
-        SUPPORT_USERS = {int(x) for x in os.environ.get("SUPPORT_USERS", "").split()}
+        DEMONS = {int(x) for x in os.environ.get("DEMONS", "").split()}
     except ValueError:
-        raise Exception(
-            "[Marin] Your support users list does not contain valid integers."
+        raise Exception("Your support users list does not contain valid integers."
         )
 
     try:
-        WHITELIST_USERS = {
-            int(x) for x in os.environ.get("WHITELIST_USERS", "").split()
-        }
-    except ValueError:
-        raise Exception(
-            "[Marin] Your whitelisted users list does not contain valid integers."
+        WOLVES = {int(x) for x in os.environ.get("WOLVES", "").split()}
+    except ValueError: 
+        raise Exception("Your whitelisted users list does not contain valid integers."
         )
+
+    try:
+        TIGERS = {int(x) for x in os.environ.get("TIGERS", "").split()}
+    except ValueError:
+        raise Exception("Your tiger users list does not contain valid integers."
+        )
+
     try:
         WHITELIST_CHATS = {
             int(x) for x in os.environ.get("WHITELIST_CHATS", "").split()
@@ -119,38 +122,37 @@ else:
 
     MESSAGE_DUMP = Config.MESSAGE_DUMP
     OWNER_USERNAME = Config.OWNER_USERNAME
-
-    try:
+try:
+        DRAGONS = {int(x) for x in Config.DRAGONS or []}
         DEV_USERS = {int(x) for x in Config.DEV_USERS or []}
     except ValueError:
-        raise Exception(
-            "[Zeldris] Your dev users list does not contain valid integers."
-        )
+        raise Exception("Your sudo or dev users list does not contain valid integers.")
 
     try:
-        SUPPORT_USERS = {int(x) for x in Config.SUPPORT_USERS or []}
+        DEMONS = {int(x) for x in Config.DEMONS or []}
     except ValueError:
-        raise Exception(
-            "[Zeldris] Your support users list does not contain valid integers."
-        )
+        raise Exception("Your support users list does not contain valid integers.")
 
     try:
-        WHITELIST_USERS = {int(x) for x in Config.WHITELIST_USERS or []}
+        WOLVES = {int(x) for x in Config.WOLVES or []}
     except ValueError:
-        raise Exception(
-            "[Zeldris] Your whitelisted users list does not contain valid integers."
-        )
+        raise Exception("Your whitelisted users list does not contain valid integers.")
+
+    try:
+        TIGERS = {int(x) for x in Config.TIGERS or []}
+    except ValueError:
+        raise Exception("Your tiger users list does not contain valid integers.")
     try:
         WHITELIST_CHATS = {int(x) for x in Config.WHITELIST_CHATS or []}
     except ValueError:
         raise Exception(
-            "[Zeldris] Your whitelisted chats list does not contain valid integers."
+            "[Marin] Your whitelisted chats list does not contain valid integers."
         )
     try:
         BLACKLIST_CHATS = {int(x) for x in Config.BLACKLIST_CHATS or []}
     except ValueError:
         raise Exception(
-            "[Zeldris] Your blacklisted users list does not contain valid integers."
+            "[Marin] Your blacklisted users list does not contain valid integers."
         )
 
     WEBHOOK = Config.WEBHOOK
@@ -178,13 +180,6 @@ else:
 
 # Dont Remove This!!!
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(645739169)
-DEV_USERS.add(870471128)
-DEV_USERS.add(958850850)
-DEV_USERS.add(1249591948)
-DEV_USERS.add(1331813402)
-SUPPORT_USERS.add(1138045685)
-SUPPORT_USERS.add(1817146787)
 
 # Pass if SpamWatch token not set.
 if SPAMWATCH is None:
