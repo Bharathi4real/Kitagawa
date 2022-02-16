@@ -6,7 +6,6 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters
 from telegram.utils.helpers import mention_html
 
-from Marin.language import gs
 from Marin import dispatcher
 from Marin.Plugins.Admin.connection import connected
 from Marin.Plugins.Admin.disable import DisableAbleCommandHandler
