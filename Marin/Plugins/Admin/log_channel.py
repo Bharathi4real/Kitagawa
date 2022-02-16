@@ -1,5 +1,5 @@
 from functools import wraps
-
+from datetime import datetime
 from Marin.Handlers.misc import is_module_loaded
 
 FILENAME = __name__.rsplit(".", 1)[-1]
@@ -22,10 +22,11 @@ if is_module_loaded(FILENAME):
             message = update.effective_message
             if result:
                 if chat.type == chat.SUPERGROUP and chat.username:
+                    datetime_fmt = "%H:%M - %d-%m-%Y"
                     result += (
                         "\n<b>Link:</b> "
                         '<a href="http://telegram.me/{}/{}">click here</a>'.format(
-                            chat.username, message.message_id
+                            datetime.utcnow().strftime(datetime_fmt), chat.username, message.message_id
                         )
                     )
                 log_chat = sql.get_chat_log_channel(chat.id)
