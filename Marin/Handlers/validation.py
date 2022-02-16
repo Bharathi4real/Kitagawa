@@ -16,7 +16,7 @@ from Marin import (
     dispatcher,
 )
 
-WHITELIST_USERS = [DEV_USERS+DRAGONS+DEMONS+TIGERS+WOLVES]
+WHITELIST_USERS = [DRAGONS+DEMONS+TIGERS+WOLVES]
 
 def is_whitelist_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
     return any(user_id in user for user in [WOLVES, TIGERS, DEMONS, DRAGONS, DEV_USERS])
