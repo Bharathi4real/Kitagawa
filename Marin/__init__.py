@@ -29,7 +29,7 @@ LOGGER.info("[Zeldris] Starting Zeldris...")
 # if version < 3.6, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 6:
     LOGGER.error(
-        "[Zeldris] You MUST have a python version of at least 3.6! Multiple features depend on this. Bot quitting."
+        "[Marin] You MUST have a python version of at least 3.6! Multiple features depend on this. Bot quitting."
     )
     sys.exit(1)
 
@@ -122,7 +122,7 @@ else:
 
     MESSAGE_DUMP = Config.MESSAGE_DUMP
     OWNER_USERNAME = Config.OWNER_USERNAME
-try:
+    try:
         DRAGONS = {int(x) for x in Config.DRAGONS or []}
         DEV_USERS = {int(x) for x in Config.DEV_USERS or []}
     except ValueError:
