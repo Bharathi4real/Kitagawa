@@ -6,7 +6,7 @@ from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
 from sqlalchemy.sql.sqltypes import BigInteger
 
 from Marin.Handlers.msg_types import Types
-from Marin import BASE, SESSION
+from Marin.Database import BASE, SESSION
 
 DEFAULT_WELCOME = "Hey {first}, how are you?"
 DEFAULT_GOODBYE = "Nice knowing ya!"
