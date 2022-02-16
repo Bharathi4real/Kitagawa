@@ -9,7 +9,7 @@ from pyrate_limiter import (
 from telegram import Update
 
 import Marin.Database.blacklistusers_sql as sql
-from Marin import LOGGER, DEV_USERS, SUPPORT_USERS, WHITELIST_USERS
+from Marin import LOGGER, DEV_USERS, DRAGONS, DEMONS
 
 try:
     from Marin import CUSTOM_CMD
@@ -26,7 +26,7 @@ else:
 class AntiSpam:
     def __init__(self):
         self.whitelist = (
-            (DEV_USERS or []) + (WHITELIST_USERS or []) + (SUPPORT_USERS or [])
+            (DEV_USERS or []) + (DRAGONS or []) + (DEMONS or [])
         )
         # Values are HIGHLY experimental, its recommended you pay attention to our commits as we will be adjusting
         # the values over time with what suits best.
