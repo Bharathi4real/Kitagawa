@@ -61,9 +61,18 @@ if is_module_loaded(FILENAME):
 
                 if message.chat.type == chat.SUPERGROUP and message.chat.username:
                     result += f'\n<b>Link:</b> <a href="https://t.me/{chat.username}/{message.message_id}">click here</a>'
-                log_chat = str(EVENT_LOGS)
+                log_chat = sql.get_chat_log_channel(chat.id)
                 if log_chat:
-                    send_log(context, log_chat, chat.id, result)
+                    try:
+                        send_log(context.bot, log_chat, chat.id, result)
+                    except Unauthorized:
+                        sql.stop_chat_logging(chat.id)
+
+            elif result != "":
+                LOGGER.warning(
+                    "%s was set as loggable, but had no return statement.",
+                    func,
+                )
 
             return result
 
