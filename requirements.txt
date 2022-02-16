@@ -2,6 +2,7 @@ alphabet_detector==0.0.7
 bleach==4.1.0
 bs4==0.0.1
 cachetools
+datetime
 emoji==1.6.3
 feedparser
 future
