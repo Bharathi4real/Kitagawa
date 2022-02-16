@@ -45,6 +45,29 @@ if is_module_loaded(FILENAME):
 
         return log_action
 
+    def gloggable(func):
+        @wraps(func)
+        def glog_action(update: Update, context: CallbackContext, *args, **kwargs):
+            result = func(update, context, *args, **kwargs)
+            chat = update.effective_chat
+            message = update.effective_message
+
+            if result:
+                datetime_fmt = "%H:%M - %d-%m-%Y"
+                result += "\n<b>Event Stamp</b>: <code>{}</code>".format(
+                    datetime.utcnow().strftime(datetime_fmt),
+                )
+
+                if message.chat.type == chat.SUPERGROUP and message.chat.username:
+                    result += f'\n<b>Link:</b> <a href="https://t.me/{chat.username}/{message.message_id}">click here</a>'
+                log_chat = str(EVENT_LOGS)
+                if log_chat:
+                    send_log(context, log_chat, chat.id, result)
+
+            return result
+
+        return glog_action
+
     def send_log(bot: Bot, log_chat_id: str, orig_chat_id: str, result: str):
         try:
             bot.send_message(log_chat_id, result, parse_mode=ParseMode.HTML)
