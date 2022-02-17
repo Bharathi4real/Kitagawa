@@ -7,7 +7,7 @@ from Marin.Database import notes_sql as sql
 from Marin import LOGGER, SUPPORT_CHAT, dispatcher
 from Marin import DRAGONS as INSPECTOR
 from Marin import MESSAGE_DUMP as JOIN_LOGGER
-from Marin.Plugins.disable import DisableAbleCommandHandler
+from Marin.Plugins.Admin.disable import DisableAbleCommandHandler
 from Marin.Handlers.managers import MessageHandlerChecker
 from Marin.Handlers.validation import (
     is_user_admin,
