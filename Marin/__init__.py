@@ -35,14 +35,14 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
 ENV = bool(os.environ.get("ENV", False))
 
 if ENV:
-    TOKEN = os.environ.get("TOKEN", None)
+    TOKEN = os.environ.get("TOKEN")
     try:
-        OWNER_ID = int(os.environ.get("OWNER_ID", None))
+        OWNER_ID = int(os.environ.get("OWNER_ID"))
     except ValueError:
         raise Exception("[Marin] Your OWNER_ID env variable is not a valid integer.")
 
-    MESSAGE_DUMP = os.environ.get("MESSAGE_DUMP", None)
-    OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
+    MESSAGE_DUMP = os.environ.get("MESSAGE_DUMP")
+    OWNER_USERNAME = os.environ.get("OWNER_USERNAME")
 
     try:
         DRAGONS = {int(x) for x in os.environ.get("DRAGONS", "").split()}
@@ -101,12 +101,12 @@ if ENV:
     BAN_STICKER = os.environ.get("BAN_STICKER", "CAADAgADOwADPPEcAXkko5EB3YGYAg")
     ALLOW_EXCL = os.environ.get("ALLOW_EXCL", False)
     CUSTOM_CMD = os.environ.get("CUSTOM_CMD", False)
-    API_WEATHER = os.environ.get("API_OPENWEATHER", None)
-    WALL_API = os.environ.get("WALL_API", None)
-    API_ID = int(os.environ.get("API_ID", None))
-    API_HASH = os.environ.get("API_HASH", None)
-    SPAMWATCH = os.environ.get("SPAMWATCH_API", None)
-    SPAMMERS = os.environ.get("SPAMMERS", None)
+    API_WEATHER = os.environ.get("API_OPENWEATHER")
+    WALL_API = os.environ.get("WALL_API")
+    API_ID = int(os.environ.get("API_ID"))
+    API_HASH = os.environ.get("API_HASH")
+    SPAMWATCH = os.environ.get("SPAMWATCH_API")
+    SPAMMERS = os.environ.get("SPAMMERS")
 
 else:
     from Marin.config import Development as Config
