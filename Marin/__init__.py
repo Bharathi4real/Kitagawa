@@ -95,6 +95,7 @@ if ENV:
     DB_URI = os.environ.get("DATABASE_URL")
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT")
     REDIS_URL = os.environ.get("REDIS_URL")
+    HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY")
     DONATION_LINK = os.environ.get("DONATION_LINK")
     LOAD = os.environ.get("LOAD", "").split()
     NO_LOAD = os.environ.get("NO_LOAD", "").split()
@@ -162,6 +163,7 @@ else:
 
     DB_URI = Config.SQLALCHEMY_DATABASE_URI
     REDIS_URL = Config.REDIS_URL
+    HEROKU_API_KEY = config.HEROKU_API_KEY
     DONATION_LINK = Config.DONATION_LINK
     LOAD = Config.LOAD
     NO_LOAD = Config.NO_LOAD
