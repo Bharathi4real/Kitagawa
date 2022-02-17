@@ -24,7 +24,7 @@ logging.basicConfig(
 
 LOGGER = logging.getLogger(__name__)
 
-LOGGER.info("[Zeldris] Starting Zeldris...")
+LOGGER.info("[Marin] Marin is Ready to do another Cosplay...")
 
 # if version < 3.6, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 6:
@@ -40,7 +40,7 @@ if ENV:
     try:
         OWNER_ID = int(os.environ.get("OWNER_ID", None))
     except ValueError:
-        raise Exception("[Zeldris] Your OWNER_ID env variable is not a valid integer.")
+        raise Exception("[Marin] Your OWNER_ID env variable is not a valid integer.")
 
     MESSAGE_DUMP = os.environ.get("MESSAGE_DUMP", None)
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
@@ -164,8 +164,8 @@ else:
 
     DB_URI = Config.SQLALCHEMY_DATABASE_URI
     REDIS_URL = Config.REDIS_URL
-    HEROKU_API_KEY = config.HEROKU_API_KEY
-    HEROKU_APP_NAME = config.HEROKU_APP_NAME
+    HEROKU_API_KEY = Config.HEROKU_API_KEY
+    HEROKU_APP_NAME = Config.HEROKU_APP_NAME
     DONATION_LINK = Config.DONATION_LINK
     LOAD = Config.LOAD
     NO_LOAD = Config.NO_LOAD
