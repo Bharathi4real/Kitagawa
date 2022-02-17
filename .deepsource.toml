@@ -1,7 +1,7 @@
 version = 1
 
 [[analyzers]]
-name = "sql"
+name = "docker"
 enabled = true
 
 [[analyzers]]
@@ -10,3 +10,11 @@ enabled = true
 
   [analyzers.meta]
   runtime_version = "3.x.x"
+
+[[analyzers]]
+name = "sql"
+enabled = true
+
+[[transformers]]
+name = "black"
+enabled = true
