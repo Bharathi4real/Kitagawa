@@ -115,6 +115,7 @@ def do(func, bot, update):
         if result:
             return result
 
+
 @dev_plus
 def shell(update: Update, context: CallbackContext):
     message = update.effective_message

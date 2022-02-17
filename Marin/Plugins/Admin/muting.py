@@ -19,7 +19,7 @@ from Marin.Handlers.validation import (
     user_admin,
     is_user_admin,
     can_restrict,
-    user_can_ban
+    user_can_ban,
 )
 from Marin.Handlers.extraction import extract_user, extract_user_and_text
 from Marin.Handlers.string_handling import extract_time

@@ -26,7 +26,9 @@ if is_module_loaded(FILENAME):
                     result += (
                         "\n<b>Link:</b> "
                         '<a href="http://telegram.me/{}/{}">click here</a>'.format(
-                            datetime.utcnow().strftime(datetime_fmt), chat.username, message.message_id
+                            datetime.utcnow().strftime(datetime_fmt),
+                            chat.username,
+                            message.message_id,
                         )
                     )
                 log_chat = sql.get_chat_log_channel(chat.id)

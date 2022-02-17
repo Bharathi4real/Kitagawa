@@ -1,4 +1,3 @@
-
 import threading
 
 from sqlalchemy import Column, String, func, distinct

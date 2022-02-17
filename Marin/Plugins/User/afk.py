@@ -1,4 +1,3 @@
-
 import time
 
 from telegram import MessageEntity, ParseMode, Update

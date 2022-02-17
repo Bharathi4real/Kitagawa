@@ -1,4 +1,3 @@
-
 import logging
 import os
 import sys
@@ -49,26 +48,22 @@ if ENV:
         DRAGONS = {int(x) for x in os.environ.get("DRAGONS", "").split()}
         DEV_USERS = {int(x) for x in os.environ.get("DEV_USERS", "").split()}
     except ValueError:
-        raise Exception("Your sudo or dev users list does not contain valid integers."
-        )
+        raise Exception("Your sudo or dev users list does not contain valid integers.")
 
     try:
         DEMONS = {int(x) for x in os.environ.get("DEMONS", "").split()}
     except ValueError:
-        raise Exception("Your support users list does not contain valid integers."
-        )
+        raise Exception("Your support users list does not contain valid integers.")
 
     try:
         WOLVES = {int(x) for x in os.environ.get("WOLVES", "").split()}
-    except ValueError: 
-        raise Exception("Your whitelisted users list does not contain valid integers."
-        )
+    except ValueError:
+        raise Exception("Your whitelisted users list does not contain valid integers.")
 
     try:
         TIGERS = {int(x) for x in os.environ.get("TIGERS", "").split()}
     except ValueError:
-        raise Exception("Your tiger users list does not contain valid integers."
-        )
+        raise Exception("Your tiger users list does not contain valid integers.")
 
     try:
         WHITELIST_CHATS = {
@@ -204,7 +199,7 @@ finally:
 
 # Telethon
 client = TelegramClient(MemorySession(), API_ID, API_HASH)
-telethn = client 
+telethn = client
 updater = tg.Updater(
     TOKEN,
     workers=min(32, os.cpu_count() + 4),
