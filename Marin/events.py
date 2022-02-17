@@ -1,6 +1,6 @@
 from telethon import events
 
-from Marin import telethn
+from Marin import client as telethn
 
 
 def register(**args):
