@@ -1,6 +1,6 @@
 from telethon import events
 
-from Marin import client as telethn
+from Marin import client 
 
 
 def register(**args):
@@ -15,7 +15,7 @@ def register(**args):
     args["pattern"] = pattern.replace("^/", r_pattern, 1)
 
     def decorator(func):
-        telethn.add_event_handler(func, events.NewMessage(**args))
+        client.add_event_handler(func, events.NewMessage(**args))
         return func
 
     return decorator
