@@ -204,6 +204,7 @@ finally:
 
 # Telethon
 client = TelegramClient(MemorySession(), API_ID, API_HASH)
+telethn = client 
 updater = tg.Updater(
     TOKEN,
     workers=min(32, os.cpu_count() + 4),
