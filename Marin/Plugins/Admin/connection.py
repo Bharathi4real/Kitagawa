@@ -1,4 +1,3 @@
-
 import re
 import time
 
@@ -10,8 +9,6 @@ import Marin.Database.connection_sql as sql
 from Marin import dispatcher, DEV_USERS
 from Marin.Handlers.validation import user_admin
 from Marin.Handlers.alternate import send_message, typing_action
-
-
 
 
 @user_admin

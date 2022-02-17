@@ -298,7 +298,9 @@ def yone_bhelp_callback(update: Update, context: CallbackContext):
                         InlineKeyboardButton(text="Users", callback_data="user_back"),
                     ],
                     [
-                        InlineKeyboardButton(text="Extras", callback_data="extras_back"),
+                        InlineKeyboardButton(
+                            text="Extras", callback_data="extras_back"
+                        ),
                         InlineKeyboardButton(
                             text="Sudoers", callback_data="sudoers_back"
                         ),

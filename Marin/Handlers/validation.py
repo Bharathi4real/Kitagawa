@@ -16,7 +16,8 @@ from Marin import (
     dispatcher,
 )
 
-WHITELIST_USERS = [DRAGONS+DEMONS+TIGERS+WOLVES]
+WHITELIST_USERS = [DRAGONS + DEMONS + TIGERS + WOLVES]
+
 
 def is_whitelist_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
     return any(user_id in user for user in [WOLVES, TIGERS, DEMONS, DRAGONS, DEV_USERS])
@@ -29,10 +30,10 @@ def is_support_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool
 def is_sudo_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
     return user_id in DRAGONS or user_id in DEV_USERS
 
+
 # refresh cache 10m
 ADMIN_CACHE = TTLCache(maxsize=512, ttl=60 * 10)
 THREAD_LOCK = RLock()
-
 
 
 def user_can_promote(chat: Chat, user: User, bot_id: int) -> bool:
@@ -316,6 +317,7 @@ def whitelist_plus(func):
         )
 
     return is_whitelist_plus_func
+
 
 def connection_status(func):
     @wraps(func)

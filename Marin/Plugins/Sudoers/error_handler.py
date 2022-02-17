@@ -1,4 +1,3 @@
-
 import html
 import io
 import random
@@ -24,7 +23,9 @@ class ErrorsDict(dict):
 
     def __contains__(self, error):
         self.raw.append(error)
-        error.identifier = "".join(random.choices("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", k=4))
+        error.identifier = "".join(
+            random.choices("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", k=4)
+        )
         for e in self:
             if type(e) is type(error) and e.args == error.args:
                 self[e] += 1
