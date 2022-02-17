@@ -27,6 +27,7 @@ class Config(object):
     MESSAGE_DUMP = None  # needed to make sure 'save from' messages persist
     REDIS_URL = "redis://something@nothing/anything:10002"  # needed for afk module, get from redislab
     HEROKU_API_KEY = "your Heroku api key"
+    HEROKU_APP_NAME = "your Heroku app name"
     LOAD = []
     NO_LOAD = []
     WEBHOOK = False
