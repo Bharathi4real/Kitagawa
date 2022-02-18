@@ -37,7 +37,7 @@ from Marin.Handlers.validation import (
 )
 from Marin.Handlers.extraction import extract_user
 from Marin.Plugins.Admin.log_channel import gloggable
-from telegram import ParseMode, 
+from telegram import ParseMode
 from telegram.utils.helpers import mention_html
 
 ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "Marin/elevated_users.json")
