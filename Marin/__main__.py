@@ -225,8 +225,8 @@ def start(update: Update, context: CallbackContext):
             f"┣[• Owner : @{OWNER_USERNAME}  \n"
             f"┣[• Uptime : {uptime} \n"
             f"┣[• Core : {psutil.cpu_percent()}%\n"
-            f"┣[• Python : Ver {python_version()} \n"
-            f"┣[• PTB : ver str+{telegram.__version__} \n"
+            f"┣[• Python : V{python_version()} \n"
+            f"┣[• PTB : V{telegram.__version__} \n"
             f"┗━━━━━━━━━━━━━━━━━━━"
         )
 
