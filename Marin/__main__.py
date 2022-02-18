@@ -226,7 +226,7 @@ def start(update: Update, context: CallbackContext):
             f"┣[• Uptime : {uptime} \n"
             f"┣[• Core : {psutil.cpu_percent()}%\n"
             f"┣[• Python : Ver {python_version()} \n"
-            f"┣[• PTB : ver str+{(telegram.__version__)} \n"
+            f"┣[• PTB : ver str+{telegram.__version__} \n"
             f"┗━━━━━━━━━━━━━━━━━━━"
         )
 
