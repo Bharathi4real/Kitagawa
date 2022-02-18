@@ -1,4 +1,5 @@
-import time, re
+import time, re, psutil
+import telegram
 from sys import argv
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import (
@@ -97,27 +98,12 @@ I have lots of handy features such as:
 Add me in your groups and give me full rights to make me function well.
 """
 
-buttons = [
-    [
-        InlineKeyboardButton(
-            text="🔸 Add me to your chat 🔸", url="t.me/Yone_Robot?startgroup=true"
-        ),
-    ],
-    [
-        InlineKeyboardButton(text="Updates 📣", url="t.me/ZeusBotsNetwork"),
-        InlineKeyboardButton(text="Support 🚑", url="t.me/ZeusSupport"),
-    ],
-    [
-        InlineKeyboardButton(text="About📜", callback_data="yone_"),
-    ],
-    [
-        InlineKeyboardButton(text="Help & Commands❕❔", callback_data="bhelp_"),
-    ],
-]
-
-
 def start(update: Update, context: CallbackContext):
     args = context.args
+    bot = context.bot
+    message = update.effective_message
+    chat = update.effective_chat
+    user = update.effective_user
     first_name = update.effective_user.first_name
     uptime = get_readable_time((time.time() - StartTime))
     if update.effective_chat.type == "private":
@@ -132,78 +118,28 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton(
-                                    text="⬅️ BACK", callback_data="help_back"
-                                )
-                            ]
-                        ]
+                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="help_back")]]
                     ),
                 )
                 send_admin_help(
                     update.effective_chat.id,
                     ADMIN[mod].__help__,
                     InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton(
-                                    text="⬅️ BACK", callback_data="admin_back"
-                                )
-                            ]
-                        ]
+                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="admin_back")]]
                     ),
                 )
                 send_user_help(
                     update.effective_chat.id,
                     USER[mod].__help__,
                     InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton(
-                                    text="⬅️ BACK", callback_data="user_back"
-                                )
-                            ]
-                        ]
+                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="user_back")]]
                     ),
                 )
                 send_tools_help(
                     update.effective_chat.id,
                     USER[mod].__help__,
                     InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton(
-                                    text="⬅️ BACK", callback_data="tools_back"
-                                )
-                            ]
-                        ]
-                    ),
-                )
-                send_extras_help(
-                    update.effective_chat.id,
-                    USER[mod].__help__,
-                    InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton(
-                                    text="⬅️ BACK", callback_data="extras_back"
-                                )
-                            ]
-                        ]
-                    ),
-                )
-                send_sudoers_help(
-                    update.effective_chat.id,
-                    SUODERS[mod].__help__,
-                    InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton(
-                                    text="⬅️ BACK", callback_data="sudoers_back"
-                                )
-                            ]
-                        ]
+                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="tools_back")]]
                     ),
                 )
 
@@ -222,20 +158,58 @@ def start(update: Update, context: CallbackContext):
         else:
             update.effective_message.reply_text(
                 PM_START_TEXT.format(
-                    escape_markdown(first_name), escape_markdown(context.bot.first_name)
-                ),
-                reply_markup=InlineKeyboardMarkup(buttons),
+                        escape_markdown(first_name), escape_markdown(context.bot.first_name)),
+                reply_markup=InlineKeyboardMarkup([
+[
+        InlineKeyboardButton(
+            text="🔸 Add me to your chat 🔸", url="t.me/Yone_Robot?startgroup=true"
+        ),
+    ],
+    [
+        InlineKeyboardButton(text="Updates 📣", url="t.me/ZeusBotsNetwork"),
+        InlineKeyboardButton(text="Support 🚑", url="t.me/ZeusSupport"),
+    ],
+    [
+        InlineKeyboardButton(text="About📜", callback_data="yone_"),
+    ],
+    [
+        InlineKeyboardButton(text="Help & Commands❕❔", callback_data="bhelp_"),
+    ],
+]),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
             )
     else:
-        update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
-                uptime
-            ),
-            parse_mode=ParseMode.HTML,
-        )
+            text = (
+                f"Hello {mention_html(user.id, user.first_name)}, I'm {bot.first_name}\n\n"
+                f"┏━━━━━━━━━━━━━━━━━━━\n"
+                f"┣[• Owner : @{OWNER_USERNAME}  \n"
+                f"┣[• Uptime : {uptime} \n"
+                f"┣[• Core : {psutil.cpu_percent()}%\n"
+                f"┣[• Python : Ver {python_version()} \n"
+                f"┣[• PTB : ver {telegram.__version__()} \n"
+                f"┗━━━━━━━━━━━━━━━━━━━")
+        
 
+            keyboard = InlineKeyboardMarkup([
+                [
+                    InlineKeyboardButton(
+                        text="SUPPORT", 
+                        url=f"https://t.me/{SUPPORT_CHAT}"),
+                    InlineKeyboardButton(
+                        text="DEVLOPER", 
+                        url=f"https://t.me/{OWNER_USERNAME}")
+                    
+                ],
+                
+                ])
+            message.reply_photo(
+                        PHOTO,
+                        caption=(text),
+                        reply_markup=keyboard,
+                        parse_mode=ParseMode.HTML,
+                        
+                    )
 
 def yone_about_callback(update: Update, context: CallbackContext):
     first_name = update.effective_user.first_name
