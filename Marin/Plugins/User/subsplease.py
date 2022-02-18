@@ -64,3 +64,5 @@ async def feeds():
                 await bot.send_message(int(CHAT_ID) , f"**{anime_name}** **Ep**: {ep}:\n\n{k}" , parse_mode="markdown")
                 print(db)
                 time.sleep(300)
+
+bot.run(feeds())
