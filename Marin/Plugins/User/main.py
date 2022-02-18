@@ -4,14 +4,8 @@ from pyrogram import Client , filters
 import os
 import time
 
-bot = Client(
-    ":memory:",
-    api_id=os.environ.get("API_ID"),
-    api_hash=os.environ.get("API_HASH"),
-    bot_token=os.environ.get("TOKEN")
-)
-
-CHAT_ID = os.environ.get('CHAT_ID')
+from Marin import client as bot
+from Marin import MESSAGE_DUMP as CHAT_ID
 
 
 
@@ -70,10 +64,3 @@ async def feeds():
                 await bot.send_message(int(CHAT_ID) , f"**{anime_name}** **Ep**: {ep}:\n\n{k}" , parse_mode="markdown")
                 print(db)
                 time.sleep(300)
-
-    
-    
-    
-
-    
-bot.run(feeds())
