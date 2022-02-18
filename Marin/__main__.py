@@ -285,7 +285,32 @@ def yone_about_callback(update: Update, context: CallbackContext):
             text=PM_START_TEXT.format(
                 escape_markdown(first_name), escape_markdown(context.bot.first_name)
             ),
-            reply_markup=InlineKeyboardMarkup(buttons),
+            reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                text="🔸 Add me to your chat 🔸",
+                                url="t.me/Yone_Robot?startgroup=true",
+                            ),
+                        ],
+                        [
+                            InlineKeyboardButton(
+                                text="Updates 📣", url="t.me/ZeusBotsNetwork"
+                            ),
+                            InlineKeyboardButton(
+                                text="Support 🚑", url="t.me/ZeusSupport"
+                            ),
+                        ],
+                        [
+                            InlineKeyboardButton(text="About📜", callback_data="yone_"),
+                        ],
+                        [
+                            InlineKeyboardButton(
+                                text="Help & Commands❕❔", callback_data="bhelp_"
+                            ),
+                        ],
+                    ]
+                ),
             parse_mode=ParseMode.MARKDOWN,
             timeout=60,
             disable_web_page_preview=False,
