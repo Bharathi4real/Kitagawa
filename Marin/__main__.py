@@ -20,6 +20,7 @@ from telegram.error import (
 from Marin import client as telethn
 from Marin import (
     OWNER_ID,
+    OWNER_USERNAME,
     dispatcher,
     StartTime,
     LOGGER,
