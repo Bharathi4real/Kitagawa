@@ -56,7 +56,7 @@ def kukirm(update: Update, context: CallbackContext) -> str:
             )
         else:
             update.effective_message.edit_text(
-                "Julia Ai Chatbot disabled by {}.".format(
+                "Marin AI disabled by {}.".format(
                     mention_html(user.id, user.first_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -84,7 +84,7 @@ def kukiadd(update: Update, context: CallbackContext) -> str:
             )
         else:
             update.effective_message.edit_text(
-                "Julia Ai Chatbot enable by {}.".format(
+                "Marin AI enable by {}.".format(
                     mention_html(user.id, user.first_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -137,7 +137,7 @@ def chatbot(update: Update, context: CallbackContext):
         Message = message.text
         bot.send_chat_action(chat_id, action="typing")
         kukiurl = requests.get(
-            "https://kukiapi.xyz/api/apikey=KUKIg76Fg4EIo/julia/kmax/message=" + Message
+            "https://kukiapi.xyz/api/apikey=KUKIg76Fg4EIo/Marin/Bharathi/message=" + Message
         )
         Kuki = json.loads(kukiurl.text)
         kuki = Kuki["reply"]
