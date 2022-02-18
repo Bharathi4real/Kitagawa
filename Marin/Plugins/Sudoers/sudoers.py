@@ -4,7 +4,7 @@ import os
 from typing import Optional
 
 from time import sleep
-from typing import Optional, List
+from typing import List
 from telegram import TelegramError
 from telegram import Update
 from telegram.error import BadRequest
@@ -37,8 +37,7 @@ from Marin.Handlers.validation import (
 )
 from Marin.Handlers.extraction import extract_user
 from Marin.Plugins.Admin.log_channel import gloggable
-from telegram import ParseMode, TelegramError, Update
-from telegram.ext import CallbackContext, CommandHandler, run_async
+from telegram import ParseMode, 
 from telegram.utils.helpers import mention_html
 
 ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "Marin/elevated_users.json")
