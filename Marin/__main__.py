@@ -267,8 +267,7 @@ def yone_about_callback(update: Update, context: CallbackContext):
             \n\n*If you have any Question, You can join Support Chat. My Developer Team will Answer. Check Link Below*""".format(
                 escape_markdown(first_name), escape_markdown(context.bot.first_name)
             ),
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
+            parse_mode=ParseMode.MARKDOWN,           
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
