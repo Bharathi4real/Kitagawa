@@ -66,6 +66,7 @@ PHOTO = "https://telegra.ph/file/3cebea6b4d092640e3922.jpg"
 
 IMG = "https://telegra.ph/file/249324c4f9dc36622b597.jpg"
 
+
 def get_readable_time(seconds: int) -> str:
     count = 0
     ping_time = ""
@@ -187,7 +188,8 @@ def start(update: Update, context: CallbackContext):
 
         else:
             update.effective_message.reply_photo(
-                IMG, caption=(PM_START_TEXT).format(
+                IMG,
+                caption=(PM_START_TEXT).format(
                     escape_markdown(first_name), escape_markdown(context.bot.first_name)
                 ),
                 reply_markup=InlineKeyboardMarkup(
@@ -283,7 +285,8 @@ def yone_about_callback(update: Update, context: CallbackContext):
         )
     elif query.data == "yone_back":
         query.message.edit(
-            IMG, caption=(PM_START_TEXT).format(
+            IMG,
+            caption=(PM_START_TEXT).format(
                 escape_markdown(first_name), escape_markdown(context.bot.first_name)
             ),
             reply_markup=InlineKeyboardMarkup(
