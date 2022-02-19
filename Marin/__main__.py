@@ -186,8 +186,8 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            update.effective_message.reply_photo(
-                IMG, caption=(PM_START_TEXT).format(
+            update.effective_message.reply_photo(IMG,
+                caption=(PM_START_TEXT).format(
                     escape_markdown(first_name), escape_markdown(context.bot.first_name)
                 ),
                 reply_markup=InlineKeyboardMarkup(
@@ -282,8 +282,8 @@ def yone_about_callback(update: Update, context: CallbackContext):
             ),
         )
     elif query.data == "yone_back":
-        query.message.edit(
-            IMG, caption=(PM_START_TEXT).format(
+        query.message.edit(IMG,
+            caption=(PM_START_TEXT).format(
                 escape_markdown(first_name), escape_markdown(context.bot.first_name)
             ),
             reply_markup=InlineKeyboardMarkup(
