@@ -344,7 +344,7 @@ def admin_help_button(update, context):
             )
 
         elif back_match:
-            query.message.edit_caption
+            query.message.edit_caption(
                 caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(paginate_modules(0, ADMIN, "admin")),
