@@ -10,15 +10,16 @@ def paste(text):
     return f"https://spaceb.in/{res.json()['payload']['id']}"
 
 
-@client.on_message(filters.command('paste'))
+@client.on_message(filters.command("paste"))
 def pastex(_, message):
     text = message.reply_to_message
     if text:
         x = paste(text.text)
-        message.reply(x,
-                      reply_markup=InlineKeyboardMarkup(
-                          [[InlineKeyboardButton("Open", url=x)]]),
-                      disable_web_page_preview=True)
+        message.reply(
+            x,
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Open", url=x)]]),
+            disable_web_page_preview=True,
+        )
 
     else:
         message.reply_text("Reply to a message!")
