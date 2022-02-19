@@ -66,6 +66,7 @@ PHOTO = "https://telegra.ph/file/3cebea6b4d092640e3922.jpg"
 
 IMG = "https://telegra.ph/file/249324c4f9dc36622b597.jpg"
 
+
 def get_readable_time(seconds: int) -> str:
     count = 0
     ping_time = ""
@@ -186,7 +187,8 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            update.effective_message.reply_photo(IMG,
+            update.effective_message.reply_photo(
+                IMG,
                 caption=(PM_START_TEXT).format(
                     escape_markdown(first_name), escape_markdown(context.bot.first_name)
                 ),
@@ -255,8 +257,9 @@ def yone_about_callback(update: Update, context: CallbackContext):
     first_name = update.effective_user.first_name
     query = update.callback_query
     if query.data == "yone_":
-        query.edit_photo(photo = IMG,
-            caption = """Hello *{}*, My name is *{}*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
+        query.edit_photo(
+            photo=IMG,
+            caption="""Hello *{}*, My name is *{}*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
             \n ‣ I can Restrict Users.
             \n ‣ I can Greet Users with customizable welcome message and even set a group rules
             \n ‣ I have an advanced Anti-Flood System which will help you to safe group from Spammmer.
@@ -282,10 +285,11 @@ def yone_about_callback(update: Update, context: CallbackContext):
             ),
         )
     elif query.data == "yone_back":
-        query.message.edit_photo(IMG,
-                caption=(PM_START_TEXT).format(
-                    escape_markdown(first_name), escape_markdown(context.bot.first_name)
-                ),
+        query.message.edit_photo(
+            IMG,
+            caption=(PM_START_TEXT).format(
+                escape_markdown(first_name), escape_markdown(context.bot.first_name)
+            ),
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -320,7 +324,8 @@ def yone_bhelp_callback(update: Update, context: CallbackContext):
     first_name = update.effective_user.first_name
     query = update.callback_query
     if query.data == "bhelp_":
-        query.message.edit_photo(photo = IMG,
+        query.message.edit_photo(
+            photo=IMG,
             caption="""
             *This is a basic help menu to explore more features click on Andvanved Commands button*""".format(
                 escape_markdown(first_name), escape_markdown(context.bot.first_name)
