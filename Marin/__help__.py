@@ -317,7 +317,7 @@ def admin_help_button(update, context):
             )
             query.message.edit_caption(
                 caption=text,
-                parse_mode=ParseMode.MARKDOWN,                
+                parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton(text="Back", callback_data="admin_back")]]
                 ),
@@ -376,7 +376,7 @@ def sudoers_help_button(update, context):
             )
             query.message.edit_caption(
                 caption=text,
-                parse_mode=ParseMode.MARKDOWN,                
+                parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton(text="Back", callback_data="sudoers_back")]]
                 ),
@@ -618,7 +618,7 @@ def help_button(update, context):
             )
             query.message.edit_caption(
                 caption=text,
-                parse_mode=ParseMode.MARKDOWN,             
+                parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
                 ),
