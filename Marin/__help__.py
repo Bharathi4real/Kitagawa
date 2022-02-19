@@ -304,7 +304,7 @@ def admin_help_button(update, context):
     mod_match = re.match(r"admin_module\((.+?)\)", query.data)
     prev_match = re.match(r"admin_prev\((.+?)\)", query.data)
     next_match = re.match(r"admin_next\((.+?)\)", query.data)
-    back_match = re.match(r"bhelp_", query.data)
+    back_match = re.match(r"admin_back", query.data)
 
     try:
         if mod_match:
