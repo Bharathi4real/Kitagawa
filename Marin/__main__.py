@@ -255,7 +255,7 @@ def yone_about_callback(update: Update, context: CallbackContext):
     first_name = update.effective_user.first_name
     query = update.callback_query
     if query.data == "yone_":
-        query.message.edit_photo(photo = IMG,
+        query.edit_photo(photo = IMG,
             caption = """Hello *{}*, My name is *{}*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
             \n ‣ I can Restrict Users.
             \n ‣ I can Greet Users with customizable welcome message and even set a group rules
