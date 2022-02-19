@@ -282,10 +282,10 @@ def yone_about_callback(update: Update, context: CallbackContext):
             ),
         )
     elif query.data == "yone_back":
-        query.message.edit(IMG,
-            caption=(PM_START_TEXT).format(
-                escape_markdown(first_name), escape_markdown(context.bot.first_name)
-            ),
+        query.message.reply_photo(IMG,
+                caption=(PM_START_TEXT).format(
+                    escape_markdown(first_name), escape_markdown(context.bot.first_name)
+                ),
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
