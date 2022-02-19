@@ -66,6 +66,7 @@ PHOTO = "https://telegra.ph/file/3cebea6b4d092640e3922.jpg"
 
 IMG = "https://telegra.ph/file/249324c4f9dc36622b597.jpg"
 
+
 def get_readable_time(seconds: int) -> str:
     count = 0
     ping_time = ""
