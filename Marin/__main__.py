@@ -312,7 +312,6 @@ def yone_about_callback(update: Update, context: CallbackContext):
             ),
             parse_mode=ParseMode.MARKDOWN,
             timeout=60,
-            disable_web_page_preview=False,
         )
 
 
@@ -325,8 +324,7 @@ def yone_bhelp_callback(update: Update, context: CallbackContext):
             *This is a basic help menu to explore more features click on Andvanved Commands button*""".format(
                 escape_markdown(first_name), escape_markdown(context.bot.first_name)
             ),
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
+            parse_mode=ParseMode.MARKDOWN           
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
