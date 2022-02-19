@@ -315,10 +315,9 @@ def admin_help_button(update, context):
                 )
                 + ADMIN[module].__help__
             )
-            query.message.edit_text(
-                text=text,
-                parse_mode=ParseMode.MARKDOWN,
-                disable_web_page_preview=True,
+            query.message.edit_caption(
+                caption=text,
+                parse_mode=ParseMode.MARKDOWN,                
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton(text="Back", callback_data="admin_back")]]
                 ),
@@ -326,8 +325,8 @@ def admin_help_button(update, context):
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(curr_page - 1, ADMIN, "admin")
@@ -336,8 +335,8 @@ def admin_help_button(update, context):
 
         elif next_match:
             next_page = int(next_match.group(1))
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(next_page + 1, ADMIN, "admin")
@@ -345,8 +344,8 @@ def admin_help_button(update, context):
             )
 
         elif back_match:
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(paginate_modules(0, ADMIN, "admin")),
             )
@@ -375,10 +374,9 @@ def sudoers_help_button(update, context):
                 )
                 + SUDOERS[module].__help__
             )
-            query.message.edit_text(
-                text=text,
-                parse_mode=ParseMode.MARKDOWN,
-                disable_web_page_preview=True,
+            query.message.edit_caption(
+                caption=text,
+                parse_mode=ParseMode.MARKDOWN,                
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton(text="Back", callback_data="sudoers_back")]]
                 ),
@@ -386,8 +384,8 @@ def sudoers_help_button(update, context):
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=text,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(curr_page - 1, SUDOERS, "sudoers")
@@ -396,8 +394,8 @@ def sudoers_help_button(update, context):
 
         elif next_match:
             next_page = int(next_match.group(1))
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(next_page + 1, SUDOERS, "sudoers")
@@ -405,8 +403,8 @@ def sudoers_help_button(update, context):
             )
 
         elif back_match:
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(0, SUDOERS, "sudoers")
@@ -437,8 +435,8 @@ def extras_help_button(update, context):
                 )
                 + EXTRAS[module].__help__
             )
-            query.message.edit_text(
-                text=text,
+            query.message.edit_caption(
+                caption=text,
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
@@ -448,8 +446,8 @@ def extras_help_button(update, context):
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(curr_page - 1, EXTRAS, "extras")
@@ -458,8 +456,8 @@ def extras_help_button(update, context):
 
         elif next_match:
             next_page = int(next_match.group(1))
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(curr_page - 1, EXTRAS, "extras")
@@ -467,8 +465,8 @@ def extras_help_button(update, context):
             )
 
         elif back_match:
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(0, EXTRAS, "extras")
@@ -499,8 +497,8 @@ def user_help_button(update, context):
                 )
                 + USER[module].__help__
             )
-            query.message.edit_text(
-                text=text,
+            query.message.edit_caption(
+                caption=text,
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
@@ -510,8 +508,8 @@ def user_help_button(update, context):
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(curr_page - 1, USER, "user")
@@ -520,8 +518,8 @@ def user_help_button(update, context):
 
         elif next_match:
             next_page = int(next_match.group(1))
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(next_page + 1, USER, "user")
@@ -529,8 +527,8 @@ def user_help_button(update, context):
             )
 
         elif back_match:
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(paginate_modules(0, USER, "user")),
             )
@@ -559,8 +557,8 @@ def tools_help_button(update, context):
                 )
                 + TOOLS[module].__help__
             )
-            query.message.edit_text(
-                text=text,
+            query.message.edit_caption(
+                caption=text,
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
@@ -570,8 +568,8 @@ def tools_help_button(update, context):
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(curr_page - 1, TOOLS, "tools")
@@ -580,8 +578,8 @@ def tools_help_button(update, context):
 
         elif next_match:
             next_page = int(next_match.group(1))
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(next_page + 1, TOOLS, "tools")
@@ -618,10 +616,9 @@ def help_button(update, context):
                 )
                 + HELPABLE[module].__help__
             )
-            query.message.edit_text(
-                text=text,
-                parse_mode=ParseMode.MARKDOWN,
-                disable_web_page_preview=True,
+            query.message.edit_caption(
+                caption=text,
+                parse_mode=ParseMode.MARKDOWN,             
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
                 ),
@@ -629,8 +626,8 @@ def help_button(update, context):
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(curr_page - 1, HELPABLE, "help")
@@ -639,8 +636,8 @@ def help_button(update, context):
 
         elif next_match:
             next_page = int(next_match.group(1))
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(next_page + 1, HELPABLE, "help")
@@ -648,8 +645,8 @@ def help_button(update, context):
             )
 
         elif back_match:
-            query.message.edit_text(
-                text=HELP_STRINGS,
+            query.message.edit_caption(
+                caption=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(0, HELPABLE, "help")
