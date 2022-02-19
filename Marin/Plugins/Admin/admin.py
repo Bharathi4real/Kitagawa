@@ -640,8 +640,7 @@ done easily using the bot.
 × /setdescription: <description> Sets new chat description in group.
 *Note*: To set group sticker set chat must needs to have min 100 members.
 An example of promoting someone to admins:
-`/promote @username`; this promotes a user to admins.
-"""
+`/promote @username`; this promotes a user to admins."""
 
 __mod_name__ = "Admins"
 
