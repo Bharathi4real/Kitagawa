@@ -255,7 +255,7 @@ def yone_about_callback(update: Update, context: CallbackContext):
     first_name = update.effective_user.first_name
     query = update.callback_query
     if query.data == "yone_":
-        query.message.edit_text(
+        query.message.reply_text(
             text="""Hello *{}*, My name is *{}*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
             \n ‣ I can Restrict Users.
             \n ‣ I can Greet Users with customizable welcome message and even set a group rules
@@ -320,7 +320,7 @@ def yone_bhelp_callback(update: Update, context: CallbackContext):
     first_name = update.effective_user.first_name
     query = update.callback_query
     if query.data == "bhelp_":
-        query.message.edit_text(
+        query.message.reply_text(
             """
             *This is a basic help menu to explore more features click on Andvanved Commands button*""".format(
                 escape_markdown(first_name), escape_markdown(context.bot.first_name)
