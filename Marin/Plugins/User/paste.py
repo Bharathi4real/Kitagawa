@@ -21,7 +21,7 @@ def paste(update: Update, context: CallbackContext):
         return
 
     key = (
-        requests.post("https://spaceb.in/api/v1/", json={"content": data})
+        requests.post("https://spaceb.in/api/v1", json={"content": data})
         .json()
         .get("result")
         .get("key")
