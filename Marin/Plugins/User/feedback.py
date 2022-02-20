@@ -23,7 +23,10 @@ async def feedback(e):
         "https://telegra.ph/file/fa1c7c944c0c3314fbaa1.jpg",
         "https://telegra.ph/file/08410b8b057782d6f59f7.jpg",
     )
-    NoText = ("https://telegra.ph/file/2dd04f407b16bc2cfdf76.jpg",)
+    NoText = (
+              "https://telegra.ph/file/2dd04f407b16bc2cfdf76.jpg",
+              "https://telegra.ph/file/08410b8b057782d6f59f7.jpg",
+    )
     BUTTON = [[Button.url("Go To Support Group", f"https://t.me/{SUPPORT_CHAT}")]]
     TEXT = "Thanks For Your Feedback, I Hope You Happy With Our Service"
     GIVE = "Give Some Text For Feedback ✨"
