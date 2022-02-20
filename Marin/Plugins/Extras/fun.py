@@ -190,17 +190,6 @@ def shrug(update: Update, _: CallbackContext):
     reply_text(random.choice(fun.SHGS))
 
 
-# def decide(update: Update, context: CallbackContext):
-#    args = update.effective_message.text.split(None, 1)
-#    if len(args) >= 2:  # Don't reply if no args
-#        reply_text = (
-#            update.effective_message.reply_to_message.reply_text
-#            if update.effective_message.reply_to_message
-#            else update.effective_message.reply_text
-#        )
-#        reply_text(random.choice(fun.DECIDE))
-
-
 def yesnowtf(update: Update, context: CallbackContext):
     msg = update.effective_message
     chat = update.effective_chat
@@ -454,7 +443,6 @@ All regex filters can be disabled incase u don't want... like: `/disable metoo`.
 __mod_name__ = "Memes"
 
 SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug, run_async=True)
-# DECIDE_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(zeldris)"), decide, friendly="decide", run_async=True)
 SNIPE_HANDLER = CommandHandler(
     "snipe",
     snipe,
@@ -498,7 +486,6 @@ GDNIGHT_HANDLER = DisableAbleMessageHandler(
 
 dispatcher.add_handler(POLICE_HANDLER)
 dispatcher.add_handler(SHRUG_HANDLER)
-# dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(ABUSE_HANDLER)
 dispatcher.add_handler(SNIPE_HANDLER)
 dispatcher.add_handler(RUNS_HANDLER)

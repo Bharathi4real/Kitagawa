@@ -403,7 +403,6 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                 # Get information
                 image = captcha["image"]
                 characters = captcha["characters"]
-                # print(characters)
                 fileobj = BytesIO()
                 fileobj.name = f"captcha_{new_mem.id}.png"
                 image.save(fp=fileobj)
@@ -446,7 +445,6 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                 nums.append(characters)
                 random.shuffle(nums)
                 to_append = []
-                # print(nums)
                 for a in nums:
                     to_append.append(
                         InlineKeyboardButton(
@@ -1061,7 +1059,6 @@ def user_captcha_button(update: Update, context: CallbackContext):
     user = update.effective_user
     query = update.callback_query
     bot = context.bot
-    # print(query.data)
     match = re.match(r"user_captchajoin_\(([\d\-]+),(\d+)\)_\((\d{4})\)", query.data)
     message = update.effective_message
     join_chat = int(match.group(1))
