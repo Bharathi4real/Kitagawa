@@ -1,6 +1,6 @@
 import threading
 
-from sqlalchemy import Column, String, UnicodeText, Boolean, Integer, distinct, func
+from sqlalchemy import Column, String, UnicodeText, Boolean, BigInteger, distinct, func
 
 from Marin.Handlers.msg_types import Types
 from Marin.Database import BASE, SESSION
@@ -27,7 +27,7 @@ class CustomFilters(BASE):
     # alter table cust_filters add column file_type integer default 1;
     # alter table cust_filters add column file_id text;
     reply_text = Column(UnicodeText)
-    file_type = Column(Integer, nullable=False, default=1)
+    file_type = Column(BigInteger, nullable=False, default=1)
     file_id = Column(UnicodeText, default=None)
 
     def __init__(
@@ -78,7 +78,7 @@ class NewCustomFilters(BASE):
     chat_id = Column(String(14), primary_key=True)
     keyword = Column(UnicodeText, primary_key=True, nullable=False)
     text = Column(UnicodeText)
-    file_type = Column(Integer, nullable=False, default=1)
+    file_type = Column(BigInteger, nullable=False, default=1)
     file_id = Column(UnicodeText, default=None)
 
     def __init__(self, chat_id, keyword, text, file_type, file_id):
