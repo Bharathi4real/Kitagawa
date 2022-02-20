@@ -5,7 +5,6 @@ from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
 
-
 def paste(update: Update, context: CallbackContext):
     args = context.args
     message = update.effective_message
