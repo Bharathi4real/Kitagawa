@@ -23,5 +23,3 @@ def pastex(_, message):
 
     else:
         message.reply_text("Reply to a message!")
-
-
