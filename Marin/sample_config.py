@@ -57,9 +57,7 @@ class Config(object):
     API_OPENWEATHER = None  # OpenWeather API
     SPAMWATCH_API = None  # Your SpamWatch token
     WALL_API = None
-    # This is required for the plugins involving the file system.
-    TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./Temp/")
-   
+  
 class Production(Config):
     LOGGER = False
 
