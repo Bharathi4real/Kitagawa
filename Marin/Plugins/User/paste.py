@@ -1,39 +1,27 @@
-import requests
-from Marin import dispatcher
-from Marin.Plugins.Admin.disable import DisableAbleCommandHandler
-from telegram import ParseMode, Update
-from telegram.ext import CallbackContext, run_async
+from requests import post, get
+from Marin import bot
+from pyrogram import filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
 
-def paste(update: Update, context: CallbackContext):
-    args = context.args
-    message = update.effective_message
+def paste(text):
+    url = "https://spaceb.in/api/v1/documents/"
+    res = post(url, data={"content": text, "extension": "txt"})
+    return f"https://spaceb.in/{res.json()['payload']['id']}"
 
-    if message.reply_to_message:
-        data = message.reply_to_message.text
-
-    elif len(args) >= 1:
-        data = message.text.split(None, 1)[1]
+@bot.on_message(filters.command('paste'))
+def pastex(_, message):
+    text = message.reply_to_message
+    if text:
+        x = paste(text.text)
+        message.reply(x,
+                      reply_markup=InlineKeyboardMarkup(
+                          [[InlineKeyboardButton("Open", url=x)]]),
+                      disable_web_page_preview=True)
 
     else:
-        message.reply_text("What am I supposed to do with this?")
-        return
-
-    key = (
-        requests.post("https://spaceb.in/api/v1", json={"content": data})
-        .json()
-        .get("result")
-        .get("key")
-    )
-
-    url = f"https://spaceb.in/{key}"
-
-    reply_text = f"*pasted to spacebin* : {url}"
-
-    message.reply_text(
-        reply_text, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
-    )
+        message.reply_text("Reply to a message!")
 
 
 PASTE_HANDLER = DisableAbleCommandHandler("paste", paste, run_async=True)
