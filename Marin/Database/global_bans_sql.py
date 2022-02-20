@@ -1,7 +1,6 @@
 import threading
 
-from sqlalchemy import Column, UnicodeText, String, Boolean
-from sqlalchemy.sql.sqltypes import BigInteger
+from sqlalchemy import Column, UnicodeText, String, Boolean, BigInteger
 
 from Marin.Database import BASE, SESSION
 
