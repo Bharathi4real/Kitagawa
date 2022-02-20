@@ -42,6 +42,7 @@ paste_bin_store_s = {
     },
 }
 
+
 @Client.on_message(filters.command("paste", "/"))
 async def paste_bin(_, message: Message):
     status_message = await message.reply_text("...", quote=True)
