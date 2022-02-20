@@ -25,8 +25,3 @@ def pastex(_, message):
         message.reply_text("Reply to a message!")
 
 
-PASTE_HANDLER = DisableAbleCommandHandler("paste", paste, run_async=True)
-dispatcher.add_handler(PASTE_HANDLER)
-
-__command_list__ = ["paste"]
-__handlers__ = [PASTE_HANDLER]
