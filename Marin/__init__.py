@@ -109,7 +109,7 @@ if ENV:
     API_HASH = os.environ.get("API_HASH")
     SPAMWATCH = os.environ.get("SPAMWATCH_API")
     SPAMMERS = os.environ.get("SPAMMERS")
-    TMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
+    TMP_DOWNLOAD_DIRECTORY = os.environ.get(TMP_DOWNLOAD_DIRECTORY)
 # create download directory, if not exist
 if not os.path.isdir(TMP_DOWNLOAD_DIRECTORY):
     os.makedirs(TMP_DOWNLOAD_DIRECTORY)
