@@ -181,7 +181,8 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            update.effective_message.reply_photo(IMG,
+            update.effective_message.reply_photo(
+                IMG,
                 caption=(PM_START_TEXT).format(
                     escape_markdown(first_name), escape_markdown(context.bot.first_name)
                 ),
@@ -251,7 +252,7 @@ def yone_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "yone_":
         query.message.edit_caption(
-            caption = """Hello *{}*, My name is *{}*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
+            caption="""Hello *{}*, My name is *{}*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
             \n ‣ I can Restrict Users.
             \n ‣ I can Greet Users with customizable welcome message and even set a group rules
             \n ‣ I have an advanced Anti-Flood System which will help you to safe group from Spammmer.
@@ -262,7 +263,7 @@ def yone_about_callback(update: Update, context: CallbackContext):
             \n\n*If you have any Question, You can join Support Chat. My Developer Team will Answer. Check Link Below*""".format(
                 escape_markdown(first_name), escape_markdown(context.bot.first_name)
             ),
-            parse_mode=ParseMode.MARKDOWN,           
+            parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -277,9 +278,9 @@ def yone_about_callback(update: Update, context: CallbackContext):
         )
     elif query.data == "yone_back":
         query.message.edit_caption(
-                caption=(PM_START_TEXT).format(
-                    escape_markdown(first_name), escape_markdown(context.bot.first_name)
-                ),
+            caption=(PM_START_TEXT).format(
+                escape_markdown(first_name), escape_markdown(context.bot.first_name)
+            ),
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -318,7 +319,7 @@ def yone_bhelp_callback(update: Update, context: CallbackContext):
             *This is a basic help menu to explore more features click on Andvanved Commands button*""".format(
                 escape_markdown(first_name), escape_markdown(context.bot.first_name)
             ),
-            parse_mode=ParseMode.MARKDOWN,         
+            parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
