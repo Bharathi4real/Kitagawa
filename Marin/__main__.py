@@ -92,15 +92,9 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-MARIN_IMG = "https://telegra.ph/file/deb284634b2c5d1b46a8d.jpg"
-
 PM_START_TEXT = """ Hello *{}*,My name is *{}*!
-A Anime Themed telegram group management bot. I'm here to help you to manage your groups.
-I have lots of handy features such as:
-‣ Warning system
-‣ Flood control system
-‣ Advanced Note keeping system
-‣ Filters keeping system and much more
+A Anime Themed telegram group management bot.
+I Have a Lot of Handy Tools Just to Make your Chat group Awesome.
 Add me in your groups and give me full rights to make me function well.
 """
 
@@ -196,15 +190,15 @@ def start(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="🔸 Add me to your chat 🔸",
-                                url="t.me/Yone_Robot?startgroup=true",
+                                url="t.me/MarinAnimeBot?startgroup=true",
                             ),
                         ],
                         [
                             InlineKeyboardButton(
-                                text="Updates 📣", url="t.me/ZeusBotsNetwork"
+                                text="Updates 📣", url="t.me/ZeusBotsNetwork."
                             ),
                             InlineKeyboardButton(
-                                text="Support 🚑", url="t.me/ZeusSupport"
+                                text="Support 🚑", url="t.me/ZeusSupport."
                             ),
                         ],
                         [
@@ -236,10 +230,10 @@ def start(update: Update, context: CallbackContext):
             [
                 [
                     InlineKeyboardButton(
-                        text="SUPPORT", url=f"https://t.me/{SUPPORT_CHAT}"
+                        text="SUPPORT", url=f"https://t.me/{SUPPORT_CHAT}."
                     ),
                     InlineKeyboardButton(
-                        text="DEVLOPER", url=f"https://t.me/{OWNER_USERNAME}"
+                        text="DEVLOPER", url=f"https://t.me/{OWNER_USERNAME}."
                     ),
                 ],
             ]
@@ -272,9 +266,9 @@ def yone_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="Support", url="t.me/ZeusSupport"),
+                        InlineKeyboardButton(text="Support", url="t.me/ZeusSupport."),
                         InlineKeyboardButton(
-                            text="Updates", url="t.me/ZeusBotsNetwork"
+                            text="Updates", url="t.me/ZeusBotsNetwork."
                         ),
                     ],
                     [InlineKeyboardButton(text="Back", callback_data="yone_back")],
@@ -291,14 +285,14 @@ def yone_about_callback(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="🔸 Add me to your chat 🔸",
-                            url="t.me/Yone_Robot?startgroup=true",
+                            url="t.me/MarinAnimeBot?startgroup=true",
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="Updates 📣", url="t.me/ZeusBotsNetwork"
+                            text="Updates 📣", url="t.me/ZeusBotsNetwork."
                         ),
-                        InlineKeyboardButton(text="Support 🚑", url="t.me/ZeusSupport"),
+                        InlineKeyboardButton(text="Support 🚑", url="t.me/ZeusSupport."),
                     ],
                     [
                         InlineKeyboardButton(text="About📜", callback_data="yone_"),
