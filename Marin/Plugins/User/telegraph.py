@@ -3,7 +3,7 @@ from pyrogram import filters
 from Marin import bot
 
 
-@bot.on_message(filters.command('ul'))
+@bot.on_message(filters.command("ul"))
 def ul(_, message):
     reply = message.reply_to_message
     if reply.media:
@@ -13,4 +13,4 @@ def ul(_, message):
         for x in fk:
             url = "https://telegra.ph" + x
 
-        i.edit(f'Your telegraph [link]({url})', disable_web_page_preview=True)
+        i.edit(f"Your telegraph [link]({url})", disable_web_page_preview=True)
