@@ -190,8 +190,6 @@ def shrug(update: Update, _: CallbackContext):
     reply_text(random.choice(fun.SHGS))
 
 
-
-
 def yesnowtf(update: Update, context: CallbackContext):
     msg = update.effective_message
     chat = update.effective_chat
