@@ -109,6 +109,11 @@ if ENV:
     API_HASH = os.environ.get("API_HASH")
     SPAMWATCH = os.environ.get("SPAMWATCH_API")
     SPAMMERS = os.environ.get("SPAMMERS")
+    TMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
+# create download directory, if not exist
+if not os.path.isdir(TMP_DOWNLOAD_DIRECTORY):
+    os.makedirs(TMP_DOWNLOAD_DIRECTORY)
+
 
 else:
     from Marin.config import Development as Config
@@ -230,5 +235,5 @@ def spamfilters(text, user_id, chat_id):
     if int(user_id) not in SPAMMERS:
         return False
 
-    print("[Zeldris] This user is a spammer!")
+    print("[Marin] This user is a spammer!")
     return True
