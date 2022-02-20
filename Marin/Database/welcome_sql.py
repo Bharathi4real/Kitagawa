@@ -2,8 +2,7 @@ import random
 import threading
 from typing import Union
 
-from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
-from sqlalchemy.sql.sqltypes import BigInteger
+from sqlalchemy import Boolean, Column, BigInteger, String, UnicodeText
 
 from Marin.Handlers.msg_types import Types
 from Marin.Database import BASE, SESSION
@@ -227,7 +226,7 @@ class Welcome(BASE):
     welcome_type = Column(Integer, default=Types.TEXT.value)
 
     custom_leave = Column(UnicodeText, default=random.choice(DEFAULT_GOODBYE_MESSAGES))
-    leave_type = Column(Integer, default=Types.TEXT.value)
+    leave_type = Column(BigInteger, default=Types.TEXT.value)
 
     clean_welcome = Column(BigInteger)
 
