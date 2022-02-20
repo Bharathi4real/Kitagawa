@@ -9,7 +9,7 @@ from telegraph import Telegraph, upload_file, exceptions
 
 TMP_DOWNLOAD_DIRECTORY = "Marin/"
 telegraph = Telegraph()
-r = telegraph.create_account(short_name=MarinAnimeBot)
+r = telegraph.create_account(short_name="MarinAnimeBot")
 auth_url = r["auth_url"]
 
 
