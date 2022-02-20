@@ -9,6 +9,8 @@ from redis import StrictRedis
 from telethon import TelegramClient
 from telethon.sessions import MemorySession
 
+from pyrogram import Client
+
 StartTime = time.time()
 
 # enable logging
@@ -206,6 +208,12 @@ updater = tg.Updater(
     request_kwargs={"read_timeout": 10, "connect_timeout": 10},
 )
 dispatcher = updater.dispatcher
+# Pyrogram
+bot = Client('bot',
+             api_id=API_ID,
+             api_hash=API_HASH,
+             bot_token=TOKEN)
+             
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
