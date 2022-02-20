@@ -95,7 +95,6 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """ Hello *{}*,My name is *{}*!
 A Anime Themed telegram group management bot.
 I Have a Lot of Handy Tools Just to Make your Chat group Awesome.
-Add me in your groups and give me full rights to make me function well.
 """
 
 
