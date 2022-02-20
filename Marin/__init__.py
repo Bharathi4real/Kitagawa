@@ -227,7 +227,6 @@ if CUSTOM_CMD and len(CUSTOM_CMD) >= 1:
 
 
 def spamfilters(text, user_id, chat_id):
-    # print("{} | {} | {}".format(text, user_id, chat_id))
     if int(user_id) not in SPAMMERS:
         return False
 

@@ -116,7 +116,6 @@ def ban(update: Update, context: CallbackContext):
             message.delete()
             return log
 
-        # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
         bot.sendMessage(
             chat.id,
             reply,
@@ -216,7 +215,6 @@ def temp_ban(update: Update, context: CallbackContext):
         reply += f"<b>Reason:</b> {html.escape(reason)}"
     try:
         chat.ban_member(user_id, until_date=bantime)
-        # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
         bot.sendMessage(
             chat.id,
             reply,
@@ -283,7 +281,6 @@ def kick(update: Update, context: CallbackContext):
 
     res = chat.unban_member(user_id)  # unban on current user = kick
     if res:
-        # context.bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
         context.bot.sendMessage(
             chat.id,
             "Untill we meet again {}!.".format(
