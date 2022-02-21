@@ -77,7 +77,7 @@ def do(func, bot, update):
 
     os.chdir(os.getcwd())
     with open(
-        os.path.join(os.getcwd(), "Marin/Handlers/temp.txt),
+        os.path.join(os.getcwd(), "Marin/Handlers/temp.txt"),
         "w",
     ) as temp:
         temp.write(body)
