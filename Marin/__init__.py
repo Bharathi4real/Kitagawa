@@ -111,6 +111,9 @@ if ENV:
     SPAMMERS = os.environ.get("SPAMMERS")
     TMP_DOWNLOAD_DIRECTORY = "./Marin/"
 
+    ANILIST_CLIENT = os.environ.get("ANILIST_CLIENT")
+    ANILIST_SECRET = os.environ.get("ANILIST_SECRET")
+    ANILIST_REDIRECT_URL = os.environ.get("ANILIST_REDIRECT_URL", "https://anilist.co/api/v2/oauth/pin")
 
 else:
     from Marin.config import Development as Config
