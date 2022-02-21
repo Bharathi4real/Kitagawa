@@ -121,15 +121,6 @@ if ENV:
     HELP_DICT = dict()
     TRIGGERS = os.environ.get("TRIGGERS", "/ !").split()
 
-    session = ClientSession()
-    plugins = dict(root="anibot/plugins")
-    anibot = Client("anibot", bot_token=TOKEN, api_id=API_ID, api_hash=API_HASH, plugins=plugins)
-
-has_user: bool = False
-if os.environ.get('USER_SESSION'):
-    has_user: bool = True
-    user = Client(os.environ.get('USER_SESSION'), api_id=API_ID, api_hash=API_HASH)
-
 else:
     from Marin.config import Development as Config
 
@@ -231,6 +222,11 @@ dispatcher = updater.dispatcher
 # Pyrogram
 bot = Client("bot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
+# Anibot
+session = ClientSession()
+    plugins = dict(root="anibot/plugins")
+anibot = 
+   Client("anibot", bot_token=TOKEN, api_id=API_ID, api_hash=API_HASH, plugins=plugins)
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
@@ -245,6 +241,11 @@ from Marin.Handlers.managers import CustomCommandHandler
 if CUSTOM_CMD and len(CUSTOM_CMD) >= 1:
     tg.CommandHandler = CustomCommandHandler
 
+has_user: bool = False
+if os.environ.get('USER_SESSION'):
+    has_user: bool = True
+    user = Client(os.environ.get('USER_SESSION'), api_id=API_ID, api_hash=API_HASH)
+
 
 def spamfilters(text, user_id, chat_id):
     if int(user_id) not in SPAMMERS:
@@ -252,3 +253,4 @@ def spamfilters(text, user_id, chat_id):
 
     print("[Marin] This user is a spammer!")
     return True
+
