@@ -2,10 +2,10 @@ import requests
 import time
 import os
 from bs4 import BeautifulSoup
-from .db import get_collection
+from Marin.Database.ani_db import get_collection
 from google_trans_new import google_translator
 from .helper import cflag, make_it_rw, pos_no, return_json_senpai, day_, season_
-from .. import BOT_NAME
+from Marin import BOT_NAME
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from jikanpy import AioJikan
 from datetime import datetime
