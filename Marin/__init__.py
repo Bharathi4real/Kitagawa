@@ -110,6 +110,7 @@ if ENV:
     API_HASH = os.environ.get("API_HASH")
     SPAMWATCH = os.environ.get("SPAMWATCH_API")
     SPAMMERS = os.environ.get("SPAMMERS")
+    MONGO_URL = os.environ.get("MONGO_URL")
     TMP_DOWNLOAD_DIRECTORY = "./Marin/"
 
     ANILIST_CLIENT = os.environ.get("ANILIST_CLIENT")
@@ -189,6 +190,7 @@ else:
     API_ID = Config.API_ID
     SPAMWATCH = Config.SPAMWATCH_API
     SPAMMERS = Config.SPAMMERS
+    MONGO_URL = Config.MONGO_URL
 
 # Dont Remove This!!!
 DEV_USERS.add(OWNER_ID)
