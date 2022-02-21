@@ -1,11 +1,9 @@
-
-
-__all__ = ['get_collection']
+__all__ = ["get_collection"]
 
 import asyncio
 from motor.motor_asyncio import AsyncIOMotorClient
 from motor.core import AgnosticClient, AgnosticDatabase, AgnosticCollection
-from Marin import MONGO_URL 
+from Marin import MONGO_URL
 
 print("Connecting to Database ...")
 
@@ -21,7 +19,7 @@ _DATABASE: AgnosticDatabase = _MGCLIENT["anibot"]
 
 
 def get_collection(name: str) -> AgnosticCollection:
-    """ Create or Get Collection from your database """
+    """Create or Get Collection from your database"""
     return _DATABASE[name]
 
 
