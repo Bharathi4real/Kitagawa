@@ -27,11 +27,12 @@ pyrogram
 pytz
 redis==4.1.0
 requests
-spamwatch==0.3.0
+spamwatch
 speedtest-cli>=2.0.2
 sqlalchemy==1.4.29
 telethon==1.24.0
-telegraph==2.1.0
+telegraph
+TgCrypto
 telegraph
 ujson==5.1.0
 wget
