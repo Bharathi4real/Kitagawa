@@ -24,6 +24,5 @@ def get_collection(name: str) -> AgnosticCollection:
     """ Create or Get Collection from your database """
     return _DATABASE[name]
 
-
 def _close_db() -> None:
     _MGCLIENT.close()
