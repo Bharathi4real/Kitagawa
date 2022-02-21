@@ -224,7 +224,7 @@ bot = Client("bot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
 # Anibot
 session = ClientSession()
-    plugins = dict(root="anibot/plugins")
+    plugins = dict(root="Marin/Plugins")
 anibot = 
    Client("anibot", bot_token=TOKEN, api_id=API_ID, api_hash=API_HASH, plugins=plugins)
 
