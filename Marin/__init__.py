@@ -5,6 +5,7 @@ import time
 
 import spamwatch
 import telegram.ext as tg
+from aiohttp import ClientSession
 from redis import StrictRedis
 from telethon import TelegramClient
 from telethon.sessions import MemorySession
