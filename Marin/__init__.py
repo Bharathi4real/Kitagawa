@@ -226,7 +226,7 @@ bot = Client("bot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 session = ClientSession()
     plugins = dict(root="Marin/Plugins")
 anibot = 
-   Client("anibot", bot_token=TOKEN, api_id=API_ID, api_hash=API_HASH, plugins=plugins)
+   Client("anibot", bot_token=TOKEN, api_id=API_ID, api_hash=API_HASH)
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
