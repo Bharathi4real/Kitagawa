@@ -4,12 +4,12 @@ import os
 from bs4 import BeautifulSoup
 from Marin.Database.Mongo.ani_db import get_collection
 from google_trans_new import google_translator
-from .helper import cflag, make_it_rw, pos_no, return_json_senpai, day_, season_
-from Marin import BOT_NAME
+from Marin.ani_helper import cflag, make_it_rw, pos_no, return_json_senpai, day_, season_
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from jikanpy import AioJikan
 from datetime import datetime
 
+BOT_NAME ="MarinAnimeBot"
 tr = google_translator()
 ANIME_DB, MANGA_DB, CHAR_DB, STUDIO_DB, AIRING_DB = {}, {}, {}, {}, {}
 GUI = get_collection('GROUP_UI')
