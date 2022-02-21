@@ -1,4 +1,5 @@
 alphabet_detector==0.0.7
+aiohttp[speedups]
 bleach==4.1.0
 bs4==0.0.1
 cachetools
