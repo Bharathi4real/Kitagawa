@@ -21,7 +21,7 @@ from Marin.Handlers.alternate import send_message, typing_action
 
 BLACKLIST_GROUP = 11
 
- 
+
 @user_admin
 @typing_action
 def blacklist(update, context):
@@ -118,7 +118,7 @@ def add_blacklist(update, context):
             "Tell me which words you would like to add in blacklist.",
         )
 
- 
+
 @user_admin
 @typing_action
 def unblacklist(update, context):
@@ -337,7 +337,7 @@ def findall(p, s):
         yield i
         i = s.find(p, i + 1)
 
- 
+
 @user_not_admin
 def del_blacklist(update, context):
     chat = update.effective_chat
@@ -464,10 +464,14 @@ BLACKLIST_HANDLER = DisableAbleCommandHandler(
 )
 ADD_BLACKLIST_HANDLER = CommandHandler("addblacklist", add_blacklist, run_async=True)
 UNBLACKLIST_HANDLER = CommandHandler("unblacklist", unblacklist, run_async=True)
-BLACKLISTMODE_HANDLER = CommandHandler("blacklistmode", blacklist_mode, pass_args=True, run_async=True)
+BLACKLISTMODE_HANDLER = CommandHandler(
+    "blacklistmode", blacklist_mode, pass_args=True, run_async=True
+)
 BLACKLIST_DEL_HANDLER = MessageHandler(
-    (Filters.text | Filters.command | Filters.sticker | Filters.photo) & Filters.chat_type.groups,
-    del_blacklist, run_async=True
+    (Filters.text | Filters.command | Filters.sticker | Filters.photo)
+    & Filters.chat_type.groups,
+    del_blacklist,
+    run_async=True,
 )
 
 dispatcher.add_handler(BLACKLIST_HANDLER)
@@ -481,5 +485,6 @@ __handlers__ = [
     ADD_BLACKLIST_HANDLER,
     UNBLACKLIST_HANDLER,
     BLACKLISTMODE_HANDLER,
-    BLACKLIST_DEL_HANDLER, BLACKLIST_GROUP,
+    BLACKLIST_DEL_HANDLER,
+    BLACKLIST_GROUP,
 ]
