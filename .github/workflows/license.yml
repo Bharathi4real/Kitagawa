@@ -1,0 +1,23 @@
+name: Add License
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Adding License
+        uses: dephraiim/license-action@v1
+        with:
+          LICENSE_TYPE: BSD
+          AUTHOR: Bharathi G
+          PROJECT_NAME: MarinAnimeBot
