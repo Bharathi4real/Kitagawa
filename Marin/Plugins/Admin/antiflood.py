@@ -66,7 +66,9 @@ def check_flood(update, context) -> str:
             tag = "KICKED"
         elif getmode == 3:
             context.bot.restrict_chat_member(
-                chat.id, user.id, permissions=ChatPermissions(can_send_messages=False),
+                chat.id,
+                user.id,
+                permissions=ChatPermissions(can_send_messages=False),
             )
             execstrings = "Muted"
             tag = "MUTED"
@@ -200,9 +202,13 @@ def set_flood(update, context) -> str:
             else:
                 sql.set_flood(chat_id, amount)
                 if conn:
-                    message.reply_text(f"Anti-flood has been set to {amount} in chat: {chat_name}")
+                    message.reply_text(
+                        f"Anti-flood has been set to {amount} in chat: {chat_name}"
+                    )
                 else:
-                    message.reply_text(f"Successfully updated anti-flood limit to {amount}!")
+                    message.reply_text(
+                        f"Successfully updated anti-flood limit to {amount}!"
+                    )
                 return (
                     "<b>{}:</b>"
                     "\n#SETFLOOD"
@@ -256,7 +262,8 @@ def flood(update, context):
         if conn:
             text = msg.reply_text(
                 "I'm currently restricting members after {} consecutive messages in {}.".format(
-                    limit, chat_name,
+                    limit,
+                    chat_name,
                 ),
             )
         else:
@@ -326,13 +333,15 @@ def set_flood_mode(update, context):
             sql.set_flood_strength(chat_id, 5, str(args[1]))
         else:
             send_message(
-                update.effective_message, "I only understand ban/kick/mute/tban/tmute!",
+                update.effective_message,
+                "I only understand ban/kick/mute/tban/tmute!",
             )
             return
         if conn:
             text = msg.reply_text(
                 "Exceeding consecutive flood limit will result in {} in {}!".format(
-                    settypeflood, chat_name,
+                    settypeflood,
+                    chat_name,
                 ),
             )
         else:
@@ -365,7 +374,8 @@ def set_flood_mode(update, context):
         if conn:
             text = msg.reply_text(
                 "Sending more messages than flood limit will result in {} in {}.".format(
-                    settypeflood, chat_name,
+                    settypeflood,
+                    chat_name,
                 ),
             )
         else:
@@ -412,11 +422,13 @@ __mod_name__ = "Anti-Flood"
 FLOOD_BAN_HANDLER = MessageHandler(
     Filters.all & ~Filters.status_update, check_flood, run_async=True
 )
-SET_FLOOD_HANDLER = CommandHandler("setflood", set_flood,  run_async=True)
+SET_FLOOD_HANDLER = CommandHandler("setflood", set_flood, run_async=True)
 SET_FLOOD_MODE_HANDLER = CommandHandler(
     "setfloodmode", set_flood_mode, pass_args=True, run_async=True
 )  # , filters=Filters.chat_type.group)
-FLOOD_QUERY_HANDLER = CallbackQueryHandler(flood_button, pattern=r"unmute_flooder", run_async=True)
+FLOOD_QUERY_HANDLER = CallbackQueryHandler(
+    flood_button, pattern=r"unmute_flooder", run_async=True
+)
 FLOOD_HANDLER = CommandHandler("flood", flood, run_async=True)
 
 dispatcher.add_handler(FLOOD_BAN_HANDLER, FLOOD_GROUP)
