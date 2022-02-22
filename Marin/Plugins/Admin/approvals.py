@@ -13,7 +13,6 @@ from telegram.error import BadRequest
 
 @loggable
 @user_admin
-
 def approve(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -58,7 +57,6 @@ def approve(update, context):
 
 @loggable
 @user_admin
-
 def disapprove(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -96,7 +94,6 @@ def disapprove(update, context):
 
 
 @user_admin
-
 def approved(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -114,7 +111,6 @@ def approved(update, context):
 
 
 @user_admin
-
 def approval(update, context):
     message = update.effective_message
     chat = update.effective_chat
@@ -136,7 +132,6 @@ def approval(update, context):
         )
 
 
-
 def unapproveall(update: Update, context: CallbackContext):
     chat = update.effective_chat
     user = update.effective_user
@@ -150,12 +145,14 @@ def unapproveall(update: Update, context: CallbackContext):
             [
                 [
                     InlineKeyboardButton(
-                        text="Unapprove all users", callback_data="unapproveall_user",
+                        text="Unapprove all users",
+                        callback_data="unapproveall_user",
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        text="Cancel", callback_data="unapproveall_cancel",
+                        text="Cancel",
+                        callback_data="unapproveall_cancel",
                     ),
                 ],
             ],
@@ -165,7 +162,6 @@ def unapproveall(update: Update, context: CallbackContext):
             reply_markup=buttons,
             parse_mode=ParseMode.MARKDOWN,
         )
-
 
 
 def unapproveall_btn(update: Update, context: CallbackContext):
@@ -214,7 +210,9 @@ DISAPPROVE = DisableAbleCommandHandler("unapprove", disapprove, run_async=True)
 APPROVED = DisableAbleCommandHandler("approved", approved, run_async=True)
 APPROVAL = DisableAbleCommandHandler("approval", approval, run_async=True)
 UNAPPROVEALL = DisableAbleCommandHandler("unapproveall", unapproveall, run_async=True)
-UNAPPROVEALL_BTN = CallbackQueryHandler(unapproveall_btn, pattern=r"unapproveall_.*", run_async=True)
+UNAPPROVEALL_BTN = CallbackQueryHandler(
+    unapproveall_btn, pattern=r"unapproveall_.*", run_async=True
+)
 
 dispatcher.add_handler(APPROVE)
 dispatcher.add_handler(DISAPPROVE)
