@@ -4,7 +4,7 @@ import re
 
 from telegram import Message, Chat, Update, User, ChatPermissions
 
-from Marin import INSPECTOR, REQUESTER, dispatcher
+from Marin import DRAGONS as INSPECTOR, DEMONS as REQUESTER, dispatcher
 from Marin.Handlers.validation import (
     bot_admin,
     is_user_admin,
