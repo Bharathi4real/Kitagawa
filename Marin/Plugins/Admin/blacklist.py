@@ -8,7 +8,7 @@ from telegram.utils.helpers import mention_html
 
 import Marin.Database.blacklist_sql as sql
 from Marin import dispatcher, LOGGER
-from Marin.Plugins.disable import DisableAbleCommandHandler
+from Marin.Plugins.Admin.disable import DisableAbleCommandHandler
 from Marin.Handlers.validation import user_admin, user_not_admin
 from Marin.Handlers.extraction import extract_text
 from Marin.Handlers.misc import split_message
