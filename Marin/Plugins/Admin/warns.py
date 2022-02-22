@@ -47,7 +47,7 @@ from Marin.Database import warns_sql as sql
 
 WARN_HANDLER_GROUP = 9
 CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"
-chat_id = update.effective_chat.id
+chat_id = Update.effective_chat.id
 bot = dispatcher.bot
 
 # Not async
