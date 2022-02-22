@@ -1,0 +1,2 @@
+- name: Add License Action
+  uses: dephraiim/license-action@v1
