@@ -47,8 +47,6 @@ from Marin.Database import warns_sql as sql
 
 WARN_HANDLER_GROUP = 9
 CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"
-chat_id = Update.effective_chat.id
-bot = dispatcher.bot
 
 # Not async
 def warn(
@@ -107,10 +105,6 @@ def warn(
                 [
                     InlineKeyboardButton(
                         "Remove warn ⚠️", callback_data="rm_warn({})".format(user.id)
-                    ),
-                    InlineKeyboardButton(
-                        text="Rules ❗",
-                        url=f"t.me/{bot.username}?start={chat_id}",
                     ),
                 ]
             ]
