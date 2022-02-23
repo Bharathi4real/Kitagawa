@@ -168,6 +168,7 @@ def clear(update: Update, context: CallbackContext):
 
 # telethon eval
 
+
 @client.on(events.NewMessage(from_users=[5161578942], pattern="^/te ?(.*)"))
 async def eval(event):
     if event.fwd_from:
