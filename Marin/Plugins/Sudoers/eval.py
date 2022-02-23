@@ -168,6 +168,8 @@ def clear(update: Update, context: CallbackContext):
 
 # telethon eval
 TEVAL_AUTH = list(5161578942, 5161578942)
+
+
 @client.on(events.NewMessage(from_users=[TEVAL_AUTH], pattern="^/te ?(.*)"))
 async def eval(event):
     if event.fwd_from:
