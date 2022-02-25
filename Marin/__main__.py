@@ -234,7 +234,8 @@ def start(update: Update, context: CallbackContext):
                         text="SUPPORT", url=f"https://t.me/{SUPPORT_CHAT}."
                     ),
                     InlineKeyboardButton(
-                        text="System Stats 💻",callback_data="stats_callback",
+                        text="System Stats 💻",
+                        callback_data="stats_callback",
                     ),
                 ],
             ]
