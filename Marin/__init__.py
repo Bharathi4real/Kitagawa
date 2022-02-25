@@ -115,7 +115,9 @@ if ENV:
 
     ANILIST_CLIENT = os.environ.get("ANILIST_CLIENT")
     ANILIST_SECRET = os.environ.get("ANILIST_SECRET")
-    ANILIST_REDIRECT_URL = os.environ.get("ANILIST_REDIRECT_URL", "https://anilist.co/api/v2/oauth/pin")
+    ANILIST_REDIRECT_URL = os.environ.get(
+        "ANILIST_REDIRECT_URL", "https://anilist.co/api/v2/oauth/pin"
+    )
     OWNER = OWNER_ID
 
     DOWN_PATH = "anibot/downloads/"
@@ -238,9 +240,9 @@ if CUSTOM_CMD and len(CUSTOM_CMD) >= 1:
     tg.CommandHandler = CustomCommandHandler
 
 has_user: bool = False
-if os.environ.get('USER_SESSION'):
+if os.environ.get("USER_SESSION"):
     has_user: bool = True
-    user = Client(os.environ.get('USER_SESSION'), api_id=API_ID, api_hash=API_HASH)
+    user = Client(os.environ.get("USER_SESSION"), api_id=API_ID, api_hash=API_HASH)
 
 
 def spamfilters(text, user_id, chat_id):
@@ -249,4 +251,3 @@ def spamfilters(text, user_id, chat_id):
 
     print("[Marin] This user is a spammer!")
     return True
-
