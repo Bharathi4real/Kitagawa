@@ -75,6 +75,7 @@ def stats_callback(_, CallbackQuery):
     text = await sys_stats()
     answer_callback_query(callback_query_id, text=text, show_alert=True)
 
+
 def get_readable_time(seconds: int) -> str:
     count = 0
     ping_time = ""
