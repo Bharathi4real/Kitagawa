@@ -12,7 +12,7 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_html
 from Marin.Handlers.validation import is_user_admin
-
+from Marin.Plugins.Sudoers.sudoers import sys_stats
 from telegram.error import (
     BadRequest,
     Unauthorized,
@@ -70,10 +70,10 @@ PHOTO = "https://telegra.ph/file/3cebea6b4d092640e3922.jpg"
 
 IMG = "https://telegra.ph/file/249324c4f9dc36622b597.jpg"
 
-@bot.on_callback_query(filters.regex("stats_callback"))
-async def stats_callbacc(_, CallbackQuery):
+
+def stats_callback(_, CallbackQuery):
     text = await sys_stats()
-    await bot.answer_callback_query(CallbackQuery.id, text, show_alert=True)
+    answer_callback_query(callback_query_id, text=text, show_alert=True)
 
 def get_readable_time(seconds: int) -> str:
     count = 0
