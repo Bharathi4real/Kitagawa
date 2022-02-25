@@ -17,12 +17,16 @@ from telegram.error import (
     BadRequest,
     Unauthorized,
 )
+
+from pyrogram import filters
+
 from Marin import client as telethn
 from Marin import (
     OWNER_ID,
     OWNER_USERNAME,
     dispatcher,
     StartTime,
+    bot,
     LOGGER,
     SUPPORT_CHAT,
     WEBHOOK,
@@ -52,7 +56,6 @@ from Marin.__help__ import (
     sudoers_help_button,
     tools_help_button,
     send_tools_help,
-    stats_callbacc,
     HELP_STRINGS,
     IMPORTED,
     HELPABLE,
@@ -67,6 +70,10 @@ PHOTO = "https://telegra.ph/file/3cebea6b4d092640e3922.jpg"
 
 IMG = "https://telegra.ph/file/249324c4f9dc36622b597.jpg"
 
+@bot.on_callback_query(filters.regex("stats_callback"))
+async def stats_callbacc(_, CallbackQuery):
+    text = await sys_stats()
+    await bot.answer_callback_query(CallbackQuery.id, text, show_alert=True)
 
 def get_readable_time(seconds: int) -> str:
     count = 0
