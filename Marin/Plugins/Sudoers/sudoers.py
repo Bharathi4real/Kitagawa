@@ -71,6 +71,7 @@ def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
 
 ### Deep link example ends
 
+
 async def sys_stats():
     bot_uptime = int(time.time() - StartTime)
     cpu = psutil.cpu_percent()
@@ -87,6 +88,7 @@ RAM: {mem}%
 DISK: {disk}%
 """
     return stats
+
 
 @dev_plus
 @gloggable
