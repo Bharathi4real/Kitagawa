@@ -1,5 +1,7 @@
 import importlib, re
 from Marin.Plugins import ALL_MODULES
+from Marin import bot
+from Marin.Plugins.Sudoers.sudoers import sys_stats
 from Marin import dispatcher, ALLOW_EXCL, LOGGER
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from Marin.Handlers.misc import paginate_modules
@@ -886,3 +888,8 @@ def migrate_chats(update: Update, context: CallbackContext):
 
     LOGGER.info("Successfully migrated!")
     raise DispatcherHandlerStop
+
+@bot.on_callback_query(filters.regex("stats_callback"))
+async def stats_callbacc(_, CallbackQuery):
+    text = await sys_stats()
+    await app.answer_callback_query(CallbackQuery.id, text, show_alert=True)
