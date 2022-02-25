@@ -52,6 +52,7 @@ from Marin.__help__ import (
     sudoers_help_button,
     tools_help_button,
     send_tools_help,
+    stats_callback,
     HELP_STRINGS,
     IMPORTED,
     HELPABLE,
@@ -233,7 +234,7 @@ def start(update: Update, context: CallbackContext):
                         text="SUPPORT", url=f"https://t.me/{SUPPORT_CHAT}."
                     ),
                     InlineKeyboardButton(
-                        text="DEVLOPER", url=f"https://t.me/{OWNER_USERNAME}."
+                        text="System Stats 💻",callback_data="stats_callback",
                     ),
                 ],
             ]
