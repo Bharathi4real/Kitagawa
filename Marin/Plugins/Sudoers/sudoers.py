@@ -1,6 +1,8 @@
 import html
 import json
 import os
+import psutil
+import subprocess
 from typing import Optional
 
 from time import sleep
@@ -12,6 +14,7 @@ from telegram.ext import Filters, CommandHandler
 from telegram.ext.dispatcher import run_async, CallbackContext
 
 import random
+import Marin.Handlers.readable_time
 import Marin.Database.users_sql as sql
 from Marin.Handlers.filters import CustomFilters
 
@@ -20,6 +23,7 @@ from Marin.Plugins.Admin.disable import DisableAbleCommandHandler
 USERS_GROUP = 4
 
 from Marin import (
+    StartTime,
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
@@ -67,6 +71,22 @@ def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
 
 ### Deep link example ends
 
+async def sys_stats():
+    bot_uptime = int(time.time() - StartTime)
+    cpu = psutil.cpu_percent()
+    mem = psutil.virtual_memory().percent
+    disk = psutil.disk_usage("/").percent
+    process = psutil.Process(os.getpid())
+    stats = f"""
+{Marin}@MarinAnimeBot
+------------------
+UPTIME: {readable_time.get_readable_time((bot_uptime))}
+BOT: {round(process.memory_info()[0] / 1024 ** 2)} MB
+CPU: {cpu}%
+RAM: {mem}%
+DISK: {disk}%
+"""
+    return stats
 
 @dev_plus
 @gloggable
