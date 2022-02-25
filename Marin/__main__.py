@@ -52,7 +52,7 @@ from Marin.__help__ import (
     sudoers_help_button,
     tools_help_button,
     send_tools_help,
-    stats_callback,
+    stats_callbacc,
     HELP_STRINGS,
     IMPORTED,
     HELPABLE,
