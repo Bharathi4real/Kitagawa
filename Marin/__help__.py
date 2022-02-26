@@ -12,7 +12,6 @@ from telegram.ext.dispatcher import DispatcherHandlerStop
 from os.path import isfile
 
 
-
 HELP_STRINGS = """Hey there! My name is *{}*.
 I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of the things I can help you with. """.format(
     dispatcher.bot.first_name,
@@ -888,4 +887,3 @@ def migrate_chats(update: Update, context: CallbackContext):
 
     LOGGER.info("Successfully migrated!")
     raise DispatcherHandlerStop
-
