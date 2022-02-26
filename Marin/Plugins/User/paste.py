@@ -13,9 +13,9 @@ from json import loads
 from json.decoder import JSONDecodeError
 import os
 from urllib.parse import urlparse
-from pyrogram import Client, filters
+from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from Marin import TMP_DOWNLOAD_DIRECTORY
+from Marin import TMP_DOWNLOAD_DIRECTORY, bot as Client
 
 paste_bin_store_s = {
     # "deldog": {
