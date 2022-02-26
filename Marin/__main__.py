@@ -26,6 +26,7 @@ from Marin import (
     dispatcher,
     bot,
     LOGGER,
+    StartTime,
     SUPPORT_CHAT,
     WEBHOOK,
     CERT_PATH,
@@ -202,7 +203,7 @@ def start(update: Update, context: CallbackContext):
                     escape_markdown(context.bot.first_name),
                     escape_markdown(uptime),
                     escape_markdown(num_users),
-                    escape_markdown(num_chats)
+                    escape_markdown(num_chats),
                 ),
                 reply_markup=InlineKeyboardMarkup(
                     [
