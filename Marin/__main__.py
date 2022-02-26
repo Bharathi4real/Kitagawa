@@ -73,10 +73,8 @@ IMG = "https://telegra.ph/file/249324c4f9dc36622b597.jpg"
 
 
 async def stats_callback(_, CallbackQuery):
-    answer_callback_query(callback_query_id,
-    text = await sys_stats(),
-    show_alert=True
-    )
+    answer_callback_query(callback_query_id, text=await sys_stats(), show_alert=True)
+
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -196,7 +194,7 @@ def start(update: Update, context: CallbackContext):
             update.effective_message.reply_photo(
                 IMG,
                 caption=(PM_START_TEXT).format(
-                    escape_markdown(first_name), 
+                    escape_markdown(first_name),
                     escape_markdown(context.bot.first_name),
                     escape_markdown(uptime),
                     sql.num_users(),
