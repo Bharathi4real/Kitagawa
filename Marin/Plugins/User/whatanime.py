@@ -45,7 +45,7 @@ def calculate_eta(current, total, start_time):
     return ", ".join(thing)
 
 
-@bot.on_message(filters.command("whatanime, sauce", prefixes=(["!", "/"])))
+@bot.on_message(filters.command("sauce", prefixes=(["!", "/"])))
 async def whatanime(c: Client, m: Message):
     media = m.photo or m.animation or m.video or m.document
     if not media:
@@ -181,5 +181,4 @@ async def progress_callback(current, total, reply):
             )
 
 __mod_name__="Whatanime"
-__help__="""/whatanime
-/sauce"""
+__help__="""/sauce"""
