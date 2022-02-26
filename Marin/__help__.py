@@ -1,7 +1,6 @@
 import importlib, re
 from Marin.Plugins import ALL_MODULES
-from Marin import bot
-from Marin.Plugins.Sudoers.sudoers import sys_stats
+
 from Marin import dispatcher, ALLOW_EXCL, LOGGER
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from Marin.Handlers.misc import paginate_modules
@@ -11,7 +10,8 @@ from telegram.utils.helpers import escape_markdown
 from Marin.Handlers.validation import is_user_admin
 from telegram.ext.dispatcher import DispatcherHandlerStop
 from os.path import isfile
-from pyrogram import filters
+
+
 
 HELP_STRINGS = """Hey there! My name is *{}*.
 I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of the things I can help you with. """.format(
@@ -889,7 +889,3 @@ def migrate_chats(update: Update, context: CallbackContext):
     LOGGER.info("Successfully migrated!")
     raise DispatcherHandlerStop
 
-@bot.on_callback_query(filters.regex("stats_callback"))
-async def stats_callbacc(_, CallbackQuery):
-    text = await sys_stats()
-    await bot.answer_callback_query(CallbackQuery.id, text, show_alert=True)
