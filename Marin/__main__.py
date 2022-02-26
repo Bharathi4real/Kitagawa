@@ -12,7 +12,6 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_html
 from Marin.Handlers.validation import is_user_admin
-from Marin.Plugins.Sudoers.sudoers import sys_stats
 from telegram.error import (
     BadRequest,
     Unauthorized,
