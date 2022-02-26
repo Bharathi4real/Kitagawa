@@ -181,5 +181,5 @@ async def progress_callback(current, total, reply):
             )
 
 __mod_name__="Whatanime"
-__help__="/whatanime
-/sauce"
+__help__="""/whatanime
+/sauce"""
