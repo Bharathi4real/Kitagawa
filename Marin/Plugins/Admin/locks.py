@@ -1,20 +1,14 @@
-
-
 from pyrogram import filters
 from pyrogram.errors.exceptions.bad_request_400 import ChatNotModified
 from pyrogram.types import ChatPermissions
 
-from Marin import( 
-           DEV_USERS,
-           DRAGONS,
-           DEMONS,
-           bot as app)
+from Marin import DEV_USERS, DRAGONS, DEMONS, bot as app
 from wbb.core.decorators.errors import capture_err
 from wbb.core.decorators.permissions import adminsOnly
 from wbb.modules.admin import current_chat_permissions, list_admins
 from wbb.utils.functions import get_urls_from_text
 
-SUDOERS = [DEV_USERS+DRAGONS+DEMONS]
+SUDOERS = [DEV_USERS + DRAGONS + DEMONS]
 __MODULE__ = "Locks"
 __HELP__ = """
 Commands: /lock | /unlock | /locks [No Parameters Required]
@@ -62,9 +56,7 @@ async def tg_lock(message, permissions: list, perm: str, lock: bool):
     permissions = {perm: True for perm in list(set(permissions))}
 
     try:
-        await app.set_chat_permissions(
-            message.chat.id, ChatPermissions(**permissions)
-        )
+        await app.set_chat_permissions(message.chat.id, ChatPermissions(**permissions))
     except ChatNotModified:
         return await message.reply_text(
             "To unlock this, you have to unlock 'messages' first."
