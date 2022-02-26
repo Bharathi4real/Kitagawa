@@ -36,10 +36,7 @@ from Marin import (
     updater,
 )
 
-from Marin.Database.users_sql import (
-    num_users,
-    num_chats,
-)
+from Marin.Database import users_sql as sql
 
 from Marin.Plugins import ALL_MODULES
 from Marin.__help__ import (
@@ -202,8 +199,8 @@ def start(update: Update, context: CallbackContext):
                     escape_markdown(first_name), 
                     escape_markdown(context.bot.first_name),
                     escape_markdown(uptime),
-                    escape_markdown(num_users),
-                    escape_markdown(num_chats),
+                    sql.num_users(),
+                    sql.num_chats(),
                 ),
                 reply_markup=InlineKeyboardMarkup(
                     [
