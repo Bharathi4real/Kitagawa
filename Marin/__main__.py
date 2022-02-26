@@ -24,7 +24,6 @@ from Marin import (
     OWNER_ID,
     OWNER_USERNAME,
     dispatcher,
-    StartTime,
     bot,
     LOGGER,
     SUPPORT_CHAT,
@@ -34,6 +33,11 @@ from Marin import (
     URL,
     TOKEN,
     updater,
+)
+
+from Marin.Database.users_sql import (
+    num_users,
+    num_chats,
 )
 
 from Marin.Plugins import ALL_MODULES
@@ -103,7 +107,9 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """ Hello *{}*,My name is *{}*!
 A Anime Themed telegram group management bot.
-I Have a Lot of Handy Tools Just to Make your Chat group Awesome.
+Uptime *{}*
+Users *{}*
+Chats *{}*
 """
 
 
@@ -192,7 +198,11 @@ def start(update: Update, context: CallbackContext):
             update.effective_message.reply_photo(
                 IMG,
                 caption=(PM_START_TEXT).format(
-                    escape_markdown(first_name), escape_markdown(context.bot.first_name)
+                    escape_markdown(first_name), 
+                    escape_markdown(context.bot.first_name),
+                    escape_markdown(uptime),
+                    escape_markdown(num_users),
+                    escape_markdown(num_chats)
                 ),
                 reply_markup=InlineKeyboardMarkup(
                     [
