@@ -214,7 +214,7 @@ dispatcher.add_handler(GITPULL_HANDLER)
 
 __mod_name__ = "Dev"
 
-__help__ ="""
+__help__ = """
 /lockdown
 /leave
 /gitpull
