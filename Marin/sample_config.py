@@ -53,12 +53,14 @@ class Config(object):
     WORKERS = 8  # Number of subthreads to use. This is the recommended amount - see for yourself what works best!
     BAN_STICKER = None  # banhammer marie sticker
     ALLOW_EXCL = False  # DEPRECATED, USE BELOW INSTEAD! Allow ! commands as well as /
-    ALLOW_CHATS = None # Lockdown mode
+    ALLOW_CHATS = None  # Lockdown mode
     CUSTOM_CMD = False  # Set to ('/', '!') or whatever to enable it, like ALLOW_EXCL but with more custom handler!
     API_OPENWEATHER = None  # OpenWeather API
     SPAMWATCH_API = None  # Your SpamWatch token
     WALL_API = None
     MONGO_URL = "your mongo db url"
+
+
 class Production(Config):
     LOGGER = False
 
