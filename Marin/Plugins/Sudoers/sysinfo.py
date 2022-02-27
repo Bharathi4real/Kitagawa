@@ -102,7 +102,7 @@ def system_status(update: Update, context: CallbackContext):
     )
     update.message.reply(
         status, update.effective_chat.id,
-        parsemode=HTML
+        parse_mode=ParseMode.HTML
     )
 
 
