@@ -101,7 +101,7 @@ def system_status(update: Update, context: CallbackContext):
         + "</code>\n"
     )
     context.bot.sendMessage(
-        update.effective_chat.id, status, reply_to_message_id, parse_mode=ParseMode.HTML
+        update.effective_chat.id, status, reply_to_message_id=event.chat, parse_mode=ParseMode.HTML
     )
 
 
