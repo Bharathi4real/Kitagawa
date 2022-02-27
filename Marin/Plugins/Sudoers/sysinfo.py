@@ -101,7 +101,7 @@ def system_status(update: Update, context: CallbackContext):
         + "</code>\n"
     )
     update.message.reply_text(
-        status, update.effective_chat.id, parse_mode=PARSEMODE_MARKDOWN_V2
+        status, update.effective_chat.id
     )
 
 
