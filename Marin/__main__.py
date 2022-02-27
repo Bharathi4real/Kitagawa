@@ -103,9 +103,10 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """ Hello *{}*,My name is *{}*!
 A Anime Themed telegram group management bot.
-Uptime *{}*
-Users *{}*
-Chats *{}*
+••••••••••••••••••••••••••
+*Uptime* {}
+{} *Users Across Chats* {}.
+••••••••••••••••••••••••••
 """
 
 
