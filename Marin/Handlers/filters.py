@@ -7,7 +7,7 @@ from Marin import DEV_USERS, DRAGONS
 class CustomFilters(object):
     class _Supporters(MessageFilter):
         def filter(self, message: Message):
-            return bool(message.from_user and message.from_user.id in DRAGONS)
+            return bool(message.from_user and message.from_user.id in DRAGONS or in DEV_USERS)
 
     support_filter = _Supporters()
 
