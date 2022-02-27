@@ -100,8 +100,9 @@ def system_status(update: Update, context: CallbackContext):
         + str(telegram.__version__)
         + "</code>\n"
     )
-    update.message.reply_text(
-        status, update.effective_chat.id
+    update.message.reply(
+        status, update.effective_chat.id,
+        parsemode=HTML
     )
 
 
