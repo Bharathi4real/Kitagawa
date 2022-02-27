@@ -112,17 +112,8 @@ if ENV:
     SPAMMERS = os.environ.get("SPAMMERS")
     MONGO_URL = os.environ.get("MONGO_URL")
     TMP_DOWNLOAD_DIRECTORY = "./Marin/"
-
-    ANILIST_CLIENT = os.environ.get("ANILIST_CLIENT")
-    ANILIST_SECRET = os.environ.get("ANILIST_SECRET")
-    ANILIST_REDIRECT_URL = os.environ.get(
-        "ANILIST_REDIRECT_URL", "https://anilist.co/api/v2/oauth/pin"
-    )
     OWNER = OWNER_ID
-
-    DOWN_PATH = "anibot/downloads/"
-    HELP_DICT = dict()
-    TRIGGERS = os.environ.get("TRIGGERS", "/ !").split()
+    ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
 else:
     from Marin.config import Development as Config
@@ -131,7 +122,7 @@ else:
     try:
         OWNER_ID = int(Config.OWNER_ID)
     except ValueError:
-        raise Exception("[Zeldris] Your OWNER_ID variable is not a valid integer.")
+        raise Exception("[Marin] Your OWNER_ID variable is not a valid integer.")
 
     MESSAGE_DUMP = Config.MESSAGE_DUMP
     OWNER_USERNAME = Config.OWNER_USERNAME
@@ -193,7 +184,7 @@ else:
     SPAMWATCH = Config.SPAMWATCH_API
     SPAMMERS = Config.SPAMMERS
     MONGO_URL = Config.MONGO_URL
-
+    ALLOW_CHATS = Config.ALLOW_CHATS
 # Dont Remove This!!!
 DEV_USERS.add(OWNER_ID)
 
