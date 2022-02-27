@@ -100,10 +100,7 @@ def system_status(update: Update, context: CallbackContext):
         + str(telegram.__version__)
         + "</code>\n"
     )
-    update.message.reply(
-        status, update.effective_chat.id,
-        parse_mode=ParseMode.HTML
-    )
+    update.message.reply(status, update.effective_chat.id, parse_mode=ParseMode.HTML)
 
 
 IP_HANDLER = CommandHandler(
