@@ -21,13 +21,14 @@ class Config(object):
     OWNER_USERNAME = ""
     API_HASH = None  # for purge stuffs
     API_ID = None
+   
+    #DB'S
+    SQLALCHEMY_DATABASE_URI = "sqldbtype://username:pw@hostname:port/db_name"  # needed for any database modules
+    REDIS_URL = "redis://something@nothing/anything:10002"  # needed for afk module, get from redislabs
+    MONGO_URL = "your mongo db url"
 
     # RECOMMENDED
-    SQLALCHEMY_DATABASE_URI = "sqldbtype://username:pw@hostname:port/db_name"  # needed for any database modules
     MESSAGE_DUMP = None  # needed to make sure 'save from' messages persist
-    REDIS_URL = "redis://something@nothing/anything:10002"  # needed for afk module, get from redislab
-    HEROKU_API_KEY = "your Heroku api key"
-    HEROKU_APP_NAME = "your Heroku app name"
     LOAD = []
     NO_LOAD = []
     WEBHOOK = False
@@ -37,12 +38,26 @@ class Config(object):
     DEV_USERS = (
         []
     )  # List of id's (not usernames) for users which have sudo access to the bot.
-    SUPPORT_USERS = (
-        []
-    )  # List of id's (not usernames) for users which are allowed to gban, but can also be banned.
-    WHITELIST_USERS = (
+    DRAGONS = (
         []
     )  # List of id's (not usernames) for users which WONT be banned/kicked by the bot.
+
+    DEMONS = (
+        []
+    )  # List of id's (not usernames) for users which are allowed to gban, but can also be banned.
+   
+    WOLVES = (
+        []
+    )  # List of id's (not usernames) for users which WONT be banned/kicked by the bot.
+
+    WOLVES = (
+        []
+    )  # List of id's (not usernames) for users which WONT be banned/kicked by the bot.
+
+    #HEROKU STUFFS
+    HEROKU_API_KEY = "your Heroku api key"
+    HEROKU_APP_NAME = "your Heroku app name"
+
     WHITELIST_CHATS = []
     BLACKLIST_CHATS = []
     DONATION_LINK = None  # EG, paypal
@@ -58,7 +73,8 @@ class Config(object):
     API_OPENWEATHER = None  # OpenWeather API
     SPAMWATCH_API = None  # Your SpamWatch token
     WALL_API = None
-    MONGO_URL = "your mongo db url"
+
+  
 class Production(Config):
     LOGGER = False
 
