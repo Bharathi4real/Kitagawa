@@ -21,8 +21,8 @@ class Config(object):
     OWNER_USERNAME = ""
     API_HASH = None  # for purge stuffs
     API_ID = None
-   
-    #DB'S
+
+    # DB'S
     SQLALCHEMY_DATABASE_URI = "sqldbtype://username:pw@hostname:port/db_name"  # needed for any database modules
     REDIS_URL = "redis://something@nothing/anything:10002"  # needed for afk module, get from redislabs
     MONGO_URL = "your mongo db url"
@@ -45,16 +45,16 @@ class Config(object):
     DEMONS = (
         []
     )  # List of id's (not usernames) for users which are allowed to gban, but can also be banned.
-   
-    WOLVES = (
-        []
-    )  # List of id's (not usernames) for users which WONT be banned/kicked by the bot.
 
     WOLVES = (
         []
     )  # List of id's (not usernames) for users which WONT be banned/kicked by the bot.
 
-    #HEROKU STUFFS
+    WOLVES = (
+        []
+    )  # List of id's (not usernames) for users which WONT be banned/kicked by the bot.
+
+    # HEROKU STUFFS
     HEROKU_API_KEY = "your Heroku api key"
     HEROKU_APP_NAME = "your Heroku app name"
 
@@ -68,13 +68,13 @@ class Config(object):
     WORKERS = 8  # Number of subthreads to use. This is the recommended amount - see for yourself what works best!
     BAN_STICKER = None  # banhammer marie sticker
     ALLOW_EXCL = False  # DEPRECATED, USE BELOW INSTEAD! Allow ! commands as well as /
-    ALLOW_CHATS = None # Lockdown mode
+    ALLOW_CHATS = None  # Lockdown mode
     CUSTOM_CMD = False  # Set to ('/', '!') or whatever to enable it, like ALLOW_EXCL but with more custom handler!
     API_OPENWEATHER = None  # OpenWeather API
     SPAMWATCH_API = None  # Your SpamWatch token
     WALL_API = None
 
-  
+
 class Production(Config):
     LOGGER = False
 
