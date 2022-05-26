@@ -35,6 +35,6 @@ telethon==1.24.0
 telegraph
 TgCrypto
 telegraph
-ujson==5.1.0
+ujson==5.2.0
 wget
 wikipedia==1.4.0
