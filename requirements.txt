@@ -37,5 +37,4 @@ telegraph
 ujson==5.4.0
 wget
 wikipedia==1.4.0 
-sqlalchemy-cockroachdb 
 psycopg2
