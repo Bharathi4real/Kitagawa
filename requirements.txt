@@ -13,7 +13,7 @@ gtts==2.2.3
 hurry.filesize
 heroku3
 jikanpy==4.3.2
-lxml==4.7.1
+lxml==4.9.1
 loguru
 markdown2==2.4.2
 motor
