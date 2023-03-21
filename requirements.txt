@@ -18,7 +18,7 @@ loguru
 markdown2==2.4.2
 motor
 multicolorcaptcha==1.1.3
-pillow==9.0.1
+pillow==9.3.0
 pretty-errors
 psutil==5.9.0
 pyrate-limiter
