@@ -25,7 +25,7 @@ pyrate-limiter
 python-telegram-bot==13.11.0
 pyrogram
 pytz
-redis==4.5.3
+redis==4.5.4
 requests
 spamwatch
 speedtest-cli>=2.0.2
